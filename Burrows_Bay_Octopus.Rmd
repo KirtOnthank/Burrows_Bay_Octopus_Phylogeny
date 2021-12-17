@@ -1,0 +1,562 @@
+---
+title: "Burrows Bay Octopus Phylogeny"
+author: "Kirt Onthank"
+date: "12/7/2020"
+output: pdf_document
+---
+
+# Libraries
+```{r}
+library(ape)
+library(xlsx)
+library(insect)
+library(aphid)
+library(DECIPHER)
+library(magrittr)
+library(phangorn)
+library(rwty)
+library(stringi)
+library(Biostrings)
+library(dplyr)
+```
+
+
+This function to convert DNAbin objects used by the ape package to DNAStringSet objects used by the DECIPHER package was written by Joel Nitta, available on his github (https://gist.github.com/joelnitta/6f30a7c0f1c83d78c76a5469e935d56f)
+```{r}
+# Convert ape::DNAbin format to Biostrings::DNAStringSet format,
+# optionally removing gaps
+DNAbin_to_DNAstringset <- function (seqs, remove_gaps = TRUE) {
+  if(isTRUE(remove_gaps)) {
+  seqs %>% as.list() %>% as.character %>% 
+      lapply(.,paste0,collapse="") %>% 
+      lapply( function (x) gsub("-", "", x)) %>% 
+      unlist %>% Biostrings::DNAStringSet()
+  } else {
+    seqs %>% as.list() %>% as.character %>% 
+      lapply(.,paste0,collapse="") %>% 
+      unlist %>% Biostrings::DNAStringSet()
+  }
+}
+```
+
+
+# Preparing the dataset
+## Reading in accession numbers
+```{r}
+access=read.xlsx("Enteroctopodidae_and_Outgroup.xlsx",sheetIndex = 1)
+#preaccess=preaccess[complete.cases(preaccess[,1]),1:6]
+```
+
+Here I am paring down the data...
+```{r}
+#access=preaccess[preaccess$two_genes=="y"&preaccess$solo_rep=="y",]
+```
+
+
+## I use ape's read.GenBank command to go out and get the specific sequences.
+```{r}
+x12s.accession=access$X12s
+x12s.accession[is.na(x12s.accession)]="DJ078208"
+x12s=read.GenBank(x12s.accession)
+x12s[names(x12s)=="DJ078208"]=as.DNAbin("-")
+names(x12s)=access$NA.
+```
+
+As is the case with with a lot of the sequences you get from Genbank, all of the sequences
+are not same strand, and the reverse complement will need to be taken for those sequences.
+To determine which sequences need this done, I am looking at the pattern of base frequencies
+for each sequence.  I probably could have built the object with some apply family function 
+instead of a for loop if I knew that group of functions better...
+```{r}
+x12s.bases=base.freq(x12s[1])
+for (i in 2:length(x12s)){
+  x12s.bases=rbind(x12s.bases,base.freq(x12s[i]))  
+}
+rownames(x12s.bases)=names(x12s)
+```
+
+```{r}
+plot(x12s.bases[,2]/x12s.bases[,3],ylim=c(0,2.8))
+plot(x12s.bases[,2]/x12s.bases[,3],x12s.bases[,1]/x12s.bases[,4])
+abline(h=1,col="red")
+abline(v=1,col="red")
+```
+
+```{r}
+revcomp=which(x12s.bases[,2]/x12s.bases[,3]>=1)
+```
+
+
+```{r}
+for (i in revcomp){
+  x12s[i]=ape::complement(x12s[i])
+}
+```
+
+```{r}
+x12s.bases=base.freq(x12s[1])
+for (i in 2:length(x12s)){
+  x12s.bases=rbind(x12s.bases,base.freq(x12s[i]))  
+}
+rownames(x12s.bases)=names(x12s)
+plot(x12s.bases[,2]/x12s.bases[,3],ylim=c(0,2.8))
+```
+
+```{r}
+write.FASTA(x12s[!is.na(access$X12s)],"12s.fasta")
+#write.FASTA(x12s,"12s.fasta")
+```
+
+```{bash}
+mkdir 12s
+cp 12s.fasta 12s
+cp dotbracket2indexPairs.pl 12s
+```
+
+
+```{bash, eval=FLASE}
+cd 12s
+#mlocarna --probabilistic --consistency-transformation --cpus=20 --stockholm --write-structure 12s.fasta > LocARNA.output
+mlocarna --free-endgaps --keep-sequence-order --cpus=20 --stockholm --write-structure 12s.fasta > LocARNA.output
+#reliability-profile.pl 12s.out
+```
+
+
+```{bash}
+cd 12s
+##########################
+# step 1: extraction of RNAalifold consensus structure
+##########################
+
+cat LocARNA.output | awk 'BEGIN{p=0;}{if(p!=0){printf$1;if(NF>1){p=0;}}else{if($1=="alifold"){p=1;printf$2;if(NF>2){p=0;}}}}END{print ""}' > LocARNA.RNAalifold.consensus;
+
+##########################
+# step 1: convert dot-bracket to index information
+##########################
+
+perl dotbracket2indexPairs.pl `cat LocARNA.RNAalifold.consensus` > LocARNA.RNAalifold.consensus.bp
+
+```
+
+
+```{r}
+x12s.txt=readLines("12s/12s.out/results/result.aln")
+sp=length(x12s[!is.na(access$X12s)])
+txt=length(x12s.txt)
+spaces=max(nchar(names(x12s[!is.na(access$X12s)])))+1
+string=paste(paste(rep(" ",spaces),sep="",collapse=""),"*",sep="")
+rep.lines=seq(from=sp+4,to=txt,by=sp+1)
+x12s.txt[rep.lines]=string
+x12s.txt=gsub("U","T",x12s.txt)
+writeLines(x12s.txt,"12s_result_mod.aln")
+```
+
+```{r}
+x12s.align=read.dna("12s_result_mod.aln",format="clustal")
+```
+
+
+```{bash}
+sed -i -e '$a\' ./12s/LocARNA.RNAalifold.consensus.bp
+```
+
+
+```{r}
+base.pairs.12s=readLines("12s/LocARNA.RNAalifold.consensus.bp")
+base.pairs.12s=gsub("^ ","",base.pairs.12s)
+stems.12s=gsub(":",",",base.pairs.12s)
+stems.12s=gsub(" ",",",stems.12s)
+writeLines(stems.12s,"basepairs_12s.csv")
+stems.12s=as.vector(t(read.csv("basepairs_12s.csv",header=F)[1,]))
+stems.12s=sort(stems.12s)
+```
+
+```{r}
+stems.12s.align=x12s.align[,stems.12s]
+stems.12s.align=DNAbin_to_DNAstringset(stems.12s.align)
+stems.12s.align=AlignSeqs(stems.12s.align)
+stems.12s.align=as.DNAbin(stems.12s.align)
+```
+
+```{r}
+loops.12s=1:length(x12s.align[1,])
+loops.12s=loops.12s[-stems.12s]
+loops.12s.align=x12s.align[,loops.12s]
+loops.12s.align=DNAbin_to_DNAstringset(loops.12s.align)
+loops.12s.align=AlignSeqs(loops.12s.align)
+loops.12s.align=as.DNAbin(loops.12s.align)
+```
+
+```{r}
+x12s.stems.dist=dist.dna(stems.12s.align)
+x12s.stems.nj=NJ(x12s.stems.dist)
+x12s.stems.pd=as.phyDat(stems.12s.align)
+x12s.stems.mT=modelTest(x12s.stems.pd,x12s.stems.nj)
+```
+
+
+```{r}
+x12s.stems.mT=x12s.stems.mT[order(x12s.stems.mT$AICc),]
+x12s.stems.mT$Model[1]
+mt=character()
+mt[1]=x12s.stems.mT$Model[1]
+```
+
+
+```{r}
+x12s.loops.dist=dist.dna(loops.12s.align)
+x12s.loops.nj=NJ(x12s.loops.dist)
+x12s.loops.pd=as.phyDat(loops.12s.align)
+x12s.loops.mT=modelTest(x12s.loops.pd,x12s.loops.nj)
+```
+
+```{r}
+x12s.loops.mT=x12s.loops.mT[order(x12s.loops.mT$AICc),]
+x12s.loops.mT$Model[1]
+mt[2]=x12s.loops.mT$Model[1]
+```
+
+```{r}
+x12s.proto=matrix(ncol=length(x12s.align[1,]),nrow=nrow(access),data="-")
+rownames(x12s.proto)=access$NA.
+x12s.final=as.DNAbin(x12s.proto)
+
+for (i in 1:length(labels(x12s.align))){
+  x12s.final[which(access$NA.==labels(x12s.align)[i]),]=x12s.align[i,]
+}
+
+write.nexus.data(x12s.final,"12s.nxs",charsperline = 1000)
+
+```
+
+```{r}
+length(x12s.final[1,])+49
+```
+
+```{bash}
+sed -i -E 's/(^.{545}).*/\1/g' 12s.nxs
+```
+
+
+# COIII
+
+```{r}
+coiii.accession=access$COIII
+coiii.accession[is.na(coiii.accession)]="DJ078208"
+coiii=read.GenBank(coiii.accession)
+coiii[names(coiii)=="DJ078208"]=as.DNAbin("-")
+names(coiii)=access$NA.
+```
+
+```{r}
+coiii.bases=base.freq(coiii[1])
+for (i in 2:length(coiii)){
+  coiii.bases=rbind(coiii.bases,base.freq(coiii[i]))  
+}
+rownames(coiii.bases)=names(coiii)
+```
+
+```{r}
+plot(coiii.bases[,1]/coiii.bases[,4],ylim=c(0,2.8))
+plot(coiii.bases[,1]/coiii.bases[,4],coiii.bases[,2]/coiii.bases[,3],ylim=c(0,2.8),xlim=c(0,3))
+abline(v=1,col="red")
+abline(h=1,col="red")
+```
+
+```{r}
+coiii2=DNAbin_to_DNAstringset(coiii)
+coiii.align=AlignSeqs(coiii2)
+coiii.stag=StaggerAlignment(coiii.align)
+coiii.final=as.DNAbin(coiii.stag)
+```
+
+```{r}
+coiii.final=as.DNAbin(coiii.stag)
+write.nexus.data(coiii.final,"coiii.nxs",charsperline = 1000)
+```
+
+
+### trimming written dataset
+```{r}
+length(coiii.final$Octopus_vulgaris)+49
+```
+
+```{bash}
+sed -i -E 's/(^.{713}).*/\1/g' coiii.nxs
+```
+
+### Model Test
+
+```{r}
+coiii.dist=dist.dna(coiii.final[!is.na(access$COIII)])
+coiii.nj=NJ(coiii.dist)
+coiii.pd=as.phyDat(coiii.final[!is.na(access$COIII)])
+```
+
+```{r}
+coiii.mT=modelTest(coiii.pd,coiii.nj)
+coiii.mT=coiii.mT[order(coiii.mT$AICc),]
+coiii.mT$Model[1]
+mt[3]=coiii.mT$Model[1]
+```
+
+
+# Cytb
+
+```{r}
+cytb.accession=access$Cytb
+cytb.accession[is.na(cytb.accession)]="DJ078208"
+cytb=read.GenBank(cytb.accession)
+cytb[names(cytb)=="DJ078208"]=as.DNAbin("-")
+names(cytb)=access$NA.
+```
+
+
+
+```{r}
+cytb.bases=base.freq(cytb[1])
+for (i in 2:length(cytb)){
+  cytb.bases=rbind(cytb.bases,base.freq(cytb[i]))  
+}
+rownames(cytb.bases)=names(cytb)
+```
+
+```{r}
+plot(cytb.bases[,2]/cytb.bases[,3],ylim=c(0,2.8))
+```
+
+
+```{r}
+cytb2=DNAbin_to_DNAstringset(cytb)
+cytb.align=AlignSeqs(cytb2)
+```
+
+```{r}
+cytb.stag=StaggerAlignment(cytb.align)
+```
+
+```{r}
+cytb.final=as.DNAbin(cytb.stag)
+write.nexus.data(cytb.final,"cytb.nxs",charsperline = 1000)
+```
+
+
+
+```{r}
+length(cytb.final$Octopus_vulgaris)+49
+```
+
+```{bash}
+sed -i -E 's/(^.{815}).*/\1/g' cytb.nxs
+```
+
+
+
+### Model Test Cytb
+
+```{r}
+cytb.dist=dist.dna(cytb.final[!is.na(access$Cytb)])
+cytb.nj=NJ(cytb.dist)
+cytb.pd=as.phyDat(cytb.final[!is.na(access$Cytb)])
+```
+
+
+```{r}
+cytb.mT=modelTest(cytb.pd,cytb.nj)
+cytb.mT=cytb.mT[order(cytb.mT$AICc),]
+cytb.mT$Model[1]
+mt[4]=cytb.mT$Model[1]
+```
+
+
+
+## Combining data together.
+
+```{r}
+write.table(t(stems.12s),"stems12s",sep=" ",row.names = F,col.names = F)
+write.table(t(loops.12s),"loops12s",sep=" ",row.names = F,col.names = F)
+```
+
+Length of the whole dataset
+```{r}
+total.len=length(x12s.final[1,])+
+  length(coiii.final$Octopus_vulgaris)+
+  length(cytb.final$Octopus_vulgaris)
+total.len
+```
+The start of the coiii dataset:
+```{r}
+coiii.start=length(x12s.final[1,])+1
+coiii.start
+```
+The start of the cytb dataset:
+```{r}
+cytb.start=length(x12s.final[1,])+
+  length(coiii.final$Octopus_vulgaris)+1
+cytb.start
+```
+
+```{r}
+models=read.csv("model_selection.csv")
+models.muus=character()
+for (i in 1:length(mt)){
+  models.muus[i]=paste("      lset applyto=(",i,") ",models$lset[models$model==mt[i]],";",sep="")
+}
+for (i in 1:length(mt)){
+  models.muus[i+length(mt)]=paste("      prset applyto=(",i,") ",models$prset[models$model==mt[i]],";",sep="")
+}
+models.muus=models.muus[-grep("NA",models.muus)]
+write.table(models.muus,"models_to_write",row.names = F,col.names = F,quote = F)
+```
+
+## Making basepairs
+```{r}
+write.table(t(c(as.vector(t(read.csv("basepairs_12s.csv",header=F)[1,])))),"basepairs",row.names = F,col.names = F)
+```
+
+```{bash}
+sed -i -E 's/([0-9]{2,4}) ([0-9]{2,4})/\1:\2/g' basepairs
+```
+
+
+Writing length variable lines
+```{r}
+write.table(paste("  DIMENSIONS NTAX=",nrow(access)," NCHAR=",total.len,";",sep=""),"dimensions",
+            row.names = F,col.names = F,quote = F)
+
+write.table(paste("      charset coiii =  ",coiii.start," - ",cytb.start-1,";",sep=""),"charset.coii",
+            row.names = F,col.names = F,quote = F)
+
+write.table(paste("      charset cytb =  ",cytb.start," - ",total.len,";",sep=""),"charset.cytb",
+            row.names = F,col.names = F,quote = F)
+
+```
+
+# Generating nexus file with MrBayes command block. 
+```{bash}
+rm complete.nxs #just cleaning out previous iteration if running multiple times
+rm -r mb
+touch complete.nxs
+echo "#NEXUS" >> complete.nxs
+echo "BEGIN DATA;" >> complete.nxs
+sed -n 1p dimensions >> complete.nxs
+#echo "  DIMENSIONS NTAX=24 NCHAR=1725;" >> complete.nxs
+echo "  FORMAT DATATYPE=DNA MISSING=? GAP=- INTERLEAVE=YES;
+  MATRIX
+  
+  [12s]" >> complete.nxs 
+sed -n 7,96p 12s.nxs >> complete.nxs
+echo "
+   [COIII]" >> complete.nxs
+sed -n 7,96p coiii.nxs >> complete.nxs
+echo "
+   [Cytb]" >> complete.nxs
+sed -n 7,98p cytb.nxs >> complete.nxs
+echo "
+begin mrbayes;
+	[Define pairs for the doublet model]" >> complete.nxs
+cat basepairs | sed '1s/^/    pairs /' | sed -E 's/(:[0-9]{,4})/\1,/g' | sed -E 's/,$/;/g' | sed -r 's/(.{72,76} )/\1\n         /g' >> complete.nxs
+echo " " >> complete.nxs
+cat stems12s | sed '1s/^/    	charset  12s-stems = /' | sed -E 's/$/;/g' | sed -r 's/(.{73,76} )/\1\n           /g' | sed '1s/^/\n/' >> complete.nxs
+
+echo " " >> complete.nxs
+cat loops12s | sed '1s/^/    	charset  12s-loops = /' | sed -E 's/$/;/g' | sed -r 's/(.{73,76} )/\1\n           /g' | sed '1s/^/\n/' >> complete.nxs
+echo " " >> complete.nxs
+sed -n 1p charset.coii >> complete.nxs
+sed -n 1p charset.cytb >> complete.nxs
+#echo "	    charset coiii =  479 - 1118;" >> complete.nxs
+#echo "	    charset cytb =  1119 - 1725;" >> complete.nxs
+echo " " >> complete.nxs
+echo "      partition parts = 4:12s-stems,12s-loops,coiii,cytb;" >> complete.nxs
+echo "	    set partition = parts;
+
+	    lset applyto=(1)   nucmodel=doublet;
+	    lset applyto=(2,3,4)   nucmodel=4by4;
+	    prset ratepr=variable;
+	" >> complete.nxs
+
+cat models_to_write >> complete.nxs
+
+echo "
+     mcmcp ngen=100000000 printfreq=1000 samplefreq=10000 stoprule=yes stopval=0.01 nruns=5 nchains=2 burninfrac=0.25;
+     mcmc;
+     sump;
+     sumt filename=mb/complete.nxs contype=allcompat conformat=simple;
+
+end;
+" >> complete.nxs
+
+mkdir mb
+cp complete.nxs mb/complete.nxs
+```
+
+
+```{bash, eval=F}
+mb-mpi mb/complete.nxs > mb_log
+```
+
+
+```{r}
+
+```
+
+
+```{r, eval=F}
+rwty.processors <<- 15
+octo.trees=load.multi("mb/", format = "mb")
+check.chains(octo.trees)
+octo.rwty=analyze.rwty(octo.trees,filename="octo_rwty.pdf")
+```
+
+
+```{r}
+makeplot.param(octo.trees, burnin = 50, "LnL")
+```
+
+```{r}
+makeplot.topology(octo.trees, burnin = 50)
+```
+
+```{r}
+makeplot.splitfreqs.cumulative(octo.trees, burnin = 50)
+```
+
+```{r}
+makeplot.splitfreqs.sliding(octo.trees, burnin = 50)
+```
+
+```{r}
+makeplot.treespace(octo.trees, burnin =50, fill.color = "LnL")
+```
+## Reading into R the resulting trees
+The file that contains the consensus trees is "complete.nxs.con.tre". This file actually contains two trees.  One contains no branch probability information, and the other contains the branch probabilities.  The following code deletes the tree without probabilities from file. If both trees are present, R opens the tree as a multi-phylo class, and manipulation of the tree becomes much harder.
+```{bash eval=FALSE}
+cp ./mb/complete.nxs.con.tre ./mb/completeBACKUP.nxs.con.tre
+sed -i '/Note: This tree contains information only on the topology/d' ./mb/complete.nxs.con.tre
+sed -i '/and branch lengths (median of the posterior probability density)/d' ./mb/complete.nxs.con.tre
+sed -i '/):/d' ./mb/complete.nxs.con.tre
+```
+
+
+Now I read the tree into R using the following code.
+```{r}
+mrbayes.tree=read.nexus("mb/complete.nxs.con.tre",tree.names=NULL)
+```
+
+Taking a quick look at the tree to make sure it looks right.
+```{r, fig.cap='Bayesian tree of COI sequences of organisms included in this meta-analysis'}
+svg(filename = "tree_Expanded_Enterocopodidae.svg",height=14,width=7)
+plot(mrbayes.tree, show.node.label=F,cex=0.3)
+nodelabels(mrbayes.tree$node.label,bg=NULL,cex=0.3,frame="none",adj=c(1.1,-0.1))
+dev.off()
+```
+```{r}
+as.numeric(mrbayes.tree$node.label)
+```
+
+
+```{r}
+plot(mrbayes.tree, show.node.label=F,cex=0.3)
+```
+
+
