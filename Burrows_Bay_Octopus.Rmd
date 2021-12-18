@@ -114,7 +114,7 @@ cp dotbracket2indexPairs.pl 12s
 ```
 
 
-```{bash, eval=FLASE}
+```{bash, eval=F}
 cd 12s
 #mlocarna --probabilistic --consistency-transformation --cpus=20 --stockholm --write-structure 12s.fasta > LocARNA.output
 mlocarna --free-endgaps --keep-sequence-order --cpus=20 --stockholm --write-structure 12s.fasta > LocARNA.output
@@ -433,9 +433,9 @@ write.table(paste("      charset cytb =  ",cytb.start," - ",total.len,";",sep=""
 ```
 
 # Generating nexus file with MrBayes command block. 
-```{bash}
+```{bash, eval=F}
 rm complete.nxs #just cleaning out previous iteration if running multiple times
-rm -r mb
+rm -r mb 
 touch complete.nxs
 echo "#NEXUS" >> complete.nxs
 echo "BEGIN DATA;" >> complete.nxs
@@ -501,33 +501,37 @@ mb-mpi mb/complete.nxs > mb_log
 ```
 
 
-```{r, eval=F}
-rwty.processors <<- 15
+```{r}
 octo.trees=load.multi("mb/", format = "mb")
 check.chains(octo.trees)
+```
+
+```{r, eval=F}
+rwty.processors <<- 15
 octo.rwty=analyze.rwty(octo.trees,filename="octo_rwty.pdf")
 ```
 
 
-```{r}
+```{r RWTY parameter plot}
 makeplot.param(octo.trees, burnin = 50, "LnL")
 ```
 
-```{r}
+```{r RWTY topology plot}
 makeplot.topology(octo.trees, burnin = 50)
 ```
 
-```{r}
+```{r RWTY cumulative splite frequencies}
 makeplot.splitfreqs.cumulative(octo.trees, burnin = 50)
 ```
 
-```{r}
+```{r RWTY sliding split frequencies}
 makeplot.splitfreqs.sliding(octo.trees, burnin = 50)
 ```
 
-```{r}
+```{r RWTY treespace plot}
 makeplot.treespace(octo.trees, burnin =50, fill.color = "LnL")
 ```
+
 ## Reading into R the resulting trees
 The file that contains the consensus trees is "complete.nxs.con.tre". This file actually contains two trees.  One contains no branch probability information, and the other contains the branch probabilities.  The following code deletes the tree without probabilities from file. If both trees are present, R opens the tree as a multi-phylo class, and manipulation of the tree becomes much harder.
 ```{bash eval=FALSE}
@@ -550,7 +554,9 @@ plot(mrbayes.tree, show.node.label=F,cex=0.3)
 nodelabels(mrbayes.tree$node.label,bg=NULL,cex=0.3,frame="none",adj=c(1.1,-0.1))
 dev.off()
 ```
-```{r}
+
+
+```{r, eval=F}
 as.numeric(mrbayes.tree$node.label)
 ```
 
