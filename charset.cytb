@@ -1,1 +1,3 @@
-      charset cytb =  1161 - 1926;
+      charset cytb_pos1 =  1161 - 1926\3;
+      charset cytb_pos2 =  1162 - 1926\3;
+      charset cytb_pos3 =  1163 - 1926\3;

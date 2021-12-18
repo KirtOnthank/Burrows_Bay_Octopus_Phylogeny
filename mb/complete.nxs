@@ -330,25 +330,33 @@ begin mrbayes;
            465 466 474 475 476 477 478 479 480 481 482 483 484 485 486 487 488 489 490 
            491 492 493 494 495 496;
  
-      charset coiii =  497 - 1160;
-      charset cytb =  1161 - 1926;
+      charset coiii_pos1 =  497 - 1160\3;
+      charset coiii_pos2 =  498 - 1160\3;
+      charset coiii_pos3 =  499 - 1160\3;
+      charset cytb_pos1 =  1161 - 1926\3;
+      charset cytb_pos2 =  1162 - 1926\3;
+      charset cytb_pos3 =  1163 - 1926\3;
  
-      partition parts = 4:12s-stems,12s-loops,coiii,cytb;
-	    set partition = parts;
+      partition by_gene = 8:12s-stems,12s-loops,coiii_pos1,coiii_pos2,coiii_pos3,cytb_pos1,cytb_pos2,cytb_pos3;
+	    set partition = by_gene;
 
+	    constraint outg = Octopus_vulgaris Octopus_rubescens Octopus_bimaculoides Octopus_cyanea Amphioctopus_aegina Hapalochlaena_maculosa Abdopus_aculeatus Octopus_tetricus Octopus_berrima Macroctopus_maorum;
+	    prset topologypr = constraints (outg);
+	    outgroup Octopus_vulgaris;
+	    
 	    lset applyto=(1)   nucmodel=doublet;
-	    lset applyto=(2,3,4)   nucmodel=4by4;
+	    lset applyto=(2,3,4,6,7,8)   nucmodel=4by4;
 	    prset ratepr=variable;
-	
+	    unlink statefreq=(all) revmat=(all) shape=(all) pinvar=(all);
       lset applyto=(1) nst=6 rates=invgamma;
       lset applyto=(2) nst=2 rates=gamma;
       lset applyto=(3) nst=6 rates=invgamma;
       lset applyto=(4) nst=6 rates=invgamma;
 
-     mcmcp ngen=100000000 printfreq=1000 samplefreq=10000 stoprule=yes stopval=0.01 nruns=5 nchains=2 burninfrac=0.25;
-     mcmc;
-     sump;
-     sumt filename=mb/complete.nxs contype=allcompat conformat=simple;
+      mcmcp ngen=100000000 printfreq=1000 samplefreq=10000 stoprule=yes stopval=0.01 nruns=5 nchains=2 burninfrac=0.25;
+      mcmc;
+      sump;
+      sumt filename=mb/complete.nxs contype=allcompat conformat=simple;
 
 end;
 
