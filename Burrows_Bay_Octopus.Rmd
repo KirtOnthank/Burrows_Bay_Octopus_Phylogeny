@@ -621,10 +621,6 @@ dev.off()
 ```
 
 
-```{r, eval=F}
-as.numeric(mrbayes.tree$node.label)
-```
-
 
 ```{r}
 plot(mrbayes.tree, show.node.label=F,cex=0.3)
