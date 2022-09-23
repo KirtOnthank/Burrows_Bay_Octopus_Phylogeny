@@ -1,8 +1,12 @@
 ---
 title: "Burrows Bay Octopus Phylogeny"
 author: "Kirt Onthank"
-date: "12/7/2020"
-output: pdf_document
+date: "`r Sys.Date()`"
+output: 
+  pdf_document:
+    toc: true
+    number_sections: true
+    toc_depth: 3
 ---
 
 # Libraries
@@ -19,6 +23,7 @@ library(stringi)
 library(Biostrings)
 library(dplyr)
 library(knitr)
+library(colorRamps)
 ```
 
 
@@ -53,7 +58,7 @@ Here I am paring down the data...
 #access=preaccess[preaccess$two_genes=="y"&preaccess$solo_rep=="y",]
 ```
 
-
+# 12s
 ## I use ape's read.GenBank command to go out and get the specific sequences.
 ```{r}
 x12s.accession=access$X12s
@@ -192,12 +197,15 @@ loops.12s.align=as.DNAbin(loops.12s.align)
 x12s.stems.dist=dist.dna(stems.12s.align)
 x12s.stems.nj=NJ(x12s.stems.dist)
 x12s.stems.pd=as.phyDat(stems.12s.align)
-x12s.stems.mT=modelTest(x12s.stems.pd,x12s.stems.nj)
+x12s.stems.mT=modelTest(x12s.stems.pd,x12s.stems.nj,
+                        model=c("GTR","SYM","K80","HKY","F81","JC"),
+                        multicore=T,mc.cores=4)
 ```
 
 
 ```{r}
 x12s.stems.mT=x12s.stems.mT[order(x12s.stems.mT$AICc),]
+x12s.stems.mT$Model=gsub("\\(\\d\\)","",x12s.stems.mT$Model)
 x12s.stems.mT$Model[1]
 mt=character()
 mt[1]=x12s.stems.mT$Model[1]
@@ -208,11 +216,14 @@ mt[1]=x12s.stems.mT$Model[1]
 x12s.loops.dist=dist.dna(loops.12s.align)
 x12s.loops.nj=NJ(x12s.loops.dist)
 x12s.loops.pd=as.phyDat(loops.12s.align)
-x12s.loops.mT=modelTest(x12s.loops.pd,x12s.loops.nj)
+x12s.loops.mT=modelTest(x12s.loops.pd,x12s.loops.nj,
+                        model=c("GTR","SYM","K80","HKY","F81","JC"),
+                        multicore=T,mc.cores=4)
 ```
 
 ```{r}
 x12s.loops.mT=x12s.loops.mT[order(x12s.loops.mT$AICc),]
+x12s.loops.mT$Model=gsub("\\(\\d\\)","",x12s.loops.mT$Model)
 x12s.loops.mT$Model[1]
 mt[2]=x12s.loops.mT$Model[1]
 ```
@@ -230,12 +241,21 @@ write.nexus.data(x12s.final,"12s.nxs",charsperline = 1000)
 
 ```
 
+
+
+Trimming the string of NAs from the end of the sequence.  First, I find out how many characters should appear per line.
 ```{r}
-length(x12s.final[1,])+49
+length(x12s.final[1,])+max(nchar(labels(x12s.final)))+10
 ```
+Next, I am using sed to trim the lines to that length.
 
 ```{bash}
 sed -i -E 's/(^.{545}).*/\1/g' 12s.nxs
+```
+
+Then, using sed to remove the last two lines of the file
+```{bash}
+sed -i "$(( $(wc -l <12s.nxs)-3+1 )),$ d" 12s.nxs
 ```
 
 
@@ -264,7 +284,7 @@ abline(v=1,col="red")
 abline(h=1,col="red")
 ```
 
-```{r}
+```{r message=FALSE, warning=FALSE}
 coiii2=DNAbin_to_DNAstringset(coiii)
 coiii.align=AlignSeqs(coiii2)
 coiii.stag=StaggerAlignment(coiii.align)
@@ -279,11 +299,16 @@ write.nexus.data(coiii.final,"coiii.nxs",charsperline = 1000)
 
 ### trimming written dataset
 ```{r}
-length(coiii.final$Octopus_vulgaris)+49
+length(coiii.final$Octopus_vulgaris)+max(nchar(labels(coiii.final)))+10
 ```
 
 ```{bash}
 sed -i -E 's/(^.{713}).*/\1/g' coiii.nxs
+```
+
+Then, using sed to remove the last two lines of the file
+```{bash}
+sed -i "$(( $(wc -l <coiii.nxs)-3+1 )),$ d" coiii.nxs
 ```
 
 ### Model Test
@@ -301,15 +326,21 @@ coiii.length=length(coiii$Octopus_vulgaris)
 
 COIII codon position 1
 ```{r}
-coiii.1.mT=modelTest(coiii.pd[,seq(from=1,to=coiii.length,by=3)],coiii.nj)
+coiii.1.mT=modelTest(coiii.pd[,seq(from=1,to=coiii.length,by=3)],coiii.nj,
+                        model=c("GTR","SYM","K80","HKY","F81","JC"),
+                        multicore=T,mc.cores=4)
 coiii.1.mT=coiii.1.mT[order(coiii.1.mT$AICc),]
+coiii.1.mT$Model=gsub("\\(\\d\\)","",coiii.1.mT$Model)
 coiii.1.mT$Model[1]
 mt[3]=coiii.1.mT$Model[1]
 ```
 
 COIII codon position 2
 ```{r}
-coiii.2.mT=modelTest(coiii.pd[,seq(from=2,to=coiii.length,by=3)],coiii.nj)
+coiii.2.mT=modelTest(coiii.pd[,seq(from=2,to=coiii.length,by=3)],coiii.nj,
+                        model=c("GTR","SYM","K80","HKY","F81","JC"),
+                        multicore=T,mc.cores=4)
+coiii.2.mT$Model=gsub("\\(\\d\\)","",coiii.2.mT$Model)
 coiii.2.mT=coiii.2.mT[order(coiii.2.mT$AICc),]
 coiii.2.mT$Model[1]
 mt[4]=coiii.2.mT$Model[1]
@@ -317,8 +348,11 @@ mt[4]=coiii.2.mT$Model[1]
 
 COIII codon position 3
 ```{r}
-coiii.3.mT=modelTest(coiii.pd[,seq(from=3,to=coiii.length,by=3)],coiii.nj)
+coiii.3.mT=modelTest(coiii.pd[,seq(from=3,to=coiii.length,by=3)],coiii.nj,
+                        model=c("GTR","SYM","K80","HKY","F81","JC"),
+                        multicore=T,mc.cores=4)
 coiii.3.mT=coiii.3.mT[order(coiii.3.mT$AICc),]
+coiii.3.mT$Model=gsub("\\(\\d\\)","",coiii.3.mT$Model)
 coiii.3.mT$Model[1]
 mt[5]=coiii.3.mT$Model[1]
 ```
@@ -332,7 +366,6 @@ cytb=read.GenBank(cytb.accession)
 cytb[names(cytb)=="DJ078208"]=as.DNAbin("-")
 names(cytb)=access$NA.
 ```
-
 
 
 ```{r}
@@ -365,13 +398,17 @@ write.nexus.data(cytb.final,"cytb.nxs",charsperline = 1000)
 
 
 ```{r}
-length(cytb.final$Octopus_vulgaris)+49
+length(cytb.final$Octopus_vulgaris)+max(nchar(labels(cytb.final)))+10
 ```
 
 ```{bash}
 sed -i -E 's/(^.{815}).*/\1/g' cytb.nxs
 ```
 
+Then, using sed to remove the last two lines of the file
+```{bash}
+sed -i "$(( $(wc -l <cytb.nxs)-3+1 )),$ d" cytb.nxs
+```
 
 
 ### Model Test Cytb
@@ -391,24 +428,33 @@ cytb.length=length(cytb$Octopus_vulgaris)
 
 Cytb codon position 1
 ```{r}
-cytb.1.mT=modelTest(cytb.pd[,seq(from=1,to=cytb.length,by=3)],cytb.nj)
+cytb.1.mT=modelTest(cytb.pd[,seq(from=1,to=cytb.length,by=3)],cytb.nj,
+                        model=c("GTR","SYM","K80","HKY","F81","JC"),
+                        multicore=T,mc.cores=4)
 cytb.1.mT=cytb.1.mT[order(cytb.1.mT$AICc),]
+cytb.1.mT$Model=gsub("\\(\\d\\)","",cytb.1.mT$Model)
 cytb.1.mT$Model[1]
 mt[6]=cytb.1.mT$Model[1]
 ```
 
 Cytb codon postion 2
 ```{r}
-cytb.2.mT=modelTest(cytb.pd[,seq(from=2,to=cytb.length,by=3)],cytb.nj)
+cytb.2.mT=modelTest(cytb.pd[,seq(from=2,to=cytb.length,by=3)],cytb.nj,
+                        model=c("GTR","SYM","K80","HKY","F81","JC"),
+                        multicore=T,mc.cores=4)
 cytb.2.mT=cytb.2.mT[order(cytb.2.mT$AICc),]
+cytb.2.mT$Model=gsub("\\(\\d\\)","",cytb.2.mT$Model)
 cytb.2.mT$Model[1]
 mt[7]=cytb.2.mT$Model[1]
 ```
 
 Cytb codon postion 3
 ```{r}
-cytb.3.mT=modelTest(cytb.pd[,seq(from=3,to=cytb.length,by=3)],cytb.nj)
+cytb.3.mT=modelTest(cytb.pd[,seq(from=3,to=cytb.length,by=3)],cytb.nj,
+                        model=c("GTR","SYM","K80","HKY","F81","JC"),
+                        multicore=T,mc.cores=4)
 cytb.3.mT=cytb.3.mT[order(cytb.3.mT$AICc),]
+cytb.3.mT$Model=gsub("\\(\\d\\)","",cytb.3.mT$Model)
 cytb.3.mT$Model[1]
 mt[8]=cytb.3.mT$Model[1]
 ```
@@ -419,7 +465,7 @@ kable(data.frame(partition=c("12s stems","12s loops","COXIII pos 1","COXIII pos 
                             "CytB pos 1","CytB pos 2","CytB pos 3"),model=mt))
 ```
 
-## Combining data together.
+# Combining data together.
 
 ```{r}
 write.table(t(stems.12s),"stems12s",sep=" ",row.names = F,col.names = F)
@@ -495,7 +541,7 @@ write.table(data.frame(models=c(
 # Generating nexus file with MrBayes command block. 
 ```{bash, eval=F}
 rm complete.nxs #just cleaning out previous iteration if running multiple times
-cp -r mb mb.backup
+#cp -r mb mb.backup
 rm -r mb
 touch complete.nxs
 echo "#NEXUS" >> complete.nxs
@@ -513,7 +559,9 @@ sed -n 7,96p coiii.nxs >> complete.nxs
 echo "
    [Cytb]" >> complete.nxs
 sed -n 7,98p cytb.nxs >> complete.nxs
-echo "
+echo "  ;
+END;
+
 begin mrbayes;
 	[Define pairs for the doublet model]" >> complete.nxs
 cat basepairs | sed '1s/^/    pairs /' | sed -E 's/(:[0-9]{,4})/\1,/g' | sed -E 's/,$/;/g' | sed -r 's/(.{72,76} )/\1\n         /g' >> complete.nxs
@@ -557,12 +605,7 @@ cp complete.nxs mb/complete.nxs
 
 
 ```{bash, eval=F}
-mb-mpi mb/complete.nxs > mb_log
-```
-
-
-```{r}
-
+mpiexec -np 10 mb mb/complete.nxs > mb_log
 ```
 
 
@@ -578,10 +621,14 @@ octo.rwty=analyze.rwty(octo.trees,filename="octo_rwty.pdf")
 
 
 ```{r RWTY parameter plot}
+png("LnL_trace.png")
 makeplot.param(octo.trees, burnin = 50, "LnL")
+dev.off()
 ```
 
+
 ```{r RWTY topology plot}
+
 makeplot.topology(octo.trees, burnin = 50)
 ```
 
@@ -596,6 +643,12 @@ makeplot.splitfreqs.sliding(octo.trees, burnin = 50)
 ```{r RWTY treespace plot}
 makeplot.treespace(octo.trees, burnin =50, fill.color = "LnL")
 ```
+
+Finally, I am removing the octo.trees object because it is super big.
+```{r}
+rm(octo.trees)
+```
+
 
 ## Reading into R the resulting trees
 The file that contains the consensus trees is "complete.nxs.con.tre". This file actually contains two trees.  One contains no branch probability information, and the other contains the branch probabilities.  The following code deletes the tree without probabilities from file. If both trees are present, R opens the tree as a multi-phylo class, and manipulation of the tree becomes much harder.
@@ -612,18 +665,381 @@ Now I read the tree into R using the following code.
 mrbayes.tree=read.nexus("mb/complete.nxs.con.tre",tree.names=NULL)
 ```
 
+
+
 Taking a quick look at the tree to make sure it looks right.
 ```{r, fig.cap='Bayesian tree of COI sequences of organisms included in this meta-analysis'}
 svg(filename = "tree_Expanded_Enterocopodidae.svg",height=14,width=7)
-plot(mrbayes.tree, show.node.label=F,cex=0.3)
+plot(mrbayes.tree, show.node.label=F,cex=0.3,tip.color=colors.tip,font=3)
 nodelabels(mrbayes.tree$node.label,bg=NULL,cex=0.3,frame="none",adj=c(1.1,-0.1))
 dev.off()
 ```
 
 
+# 12s Only Tree
+```{r}
+x12s.solo=x12s.final[complete.cases(access$X12s),]
+write.nexus.data(x12s.solo,"12s_solo.nxs",charsperline = 1000)
+length(x12s.solo[1,])+max(nchar(labels(x12s.solo)))+10
+```
+
+
+```{bash}
+sed -i -E 's/(^.{540}).*/\1/g' 12s_solo.nxs
+```
+
+## Writing length variable lines
+```{r}
+write.table(paste("  DIMENSIONS NTAX=",
+                  dim(x12s.solo)[1],
+                  " NCHAR=",
+                  dim(x12s.solo)[2],
+                  ";",sep=""),
+            "12s_dimensions",
+            row.names = F,col.names = F,quote = F)
+
+write.table(models.muus[grepl("\\(1\\)|\\(2\\)",models.muus)],
+            "12s_models_to_write",row.names = F,col.names = F,quote = F)
+```
+
+
+## Generating nexus file with MrBayes command block. 
+```{bash, eval=F}
+rm 12s_alone.nxs #just cleaning out previous iteration if running multiple times
+cp -r mb_12s mb_12s.backup
+rm -r mb_12s
+touch 12s_alone.nxs
+echo "#NEXUS" >> 12s_alone.nxs
+echo "BEGIN DATA;" >> 12s_alone.nxs
+sed -n 1p 12s_dimensions >> 12s_alone.nxs
+echo "  FORMAT DATATYPE=DNA MISSING=? GAP=- INTERLEAVE=YES;
+  MATRIX
+  
+  [12s]" >> 12s_alone.nxs 
+sed -n 7,96p 12s_solo.nxs >> 12s_alone.nxs
+echo "
+begin mrbayes;
+	[Define pairs for the doublet model]" >> 12s_alone.nxs
+cat basepairs | sed '1s/^/    pairs /' | sed -E 's/(:[0-9]{,4})/\1,/g' | sed -E 's/,$/;/g' | sed -r 's/(.{72,76} )/\1\n         /g' >> 12s_alone.nxs
+echo " " >> 12s_alone.nxs
+cat stems12s | sed '1s/^/    	charset  12s-stems = /' | sed -E 's/$/;/g' | sed -r 's/(.{73,76} )/\1\n           /g' | sed '1s/^/\n/' >> 12s_alone.nxs
+
+echo " " >> 12s_alone.nxs
+cat loops12s | sed '1s/^/    	charset  12s-loops = /' | sed -E 's/$/;/g' | sed -r 's/(.{73,76} )/\1\n           /g' | sed '1s/^/\n/' >> 12s_alone.nxs
+echo " " >> 12s_alone.nxs
+echo "      partition by_gene = 2:12s-stems,12s-loops;" >> 12s_alone.nxs
+echo "	    set partition = by_gene;
+" >> 12s_alone.nxs
+echo "	    constraint outg = Octopus_vulgaris Octopus_rubescens Octopus_bimaculoides Octopus_cyanea Amphioctopus_aegina Hapalochlaena_maculosa Abdopus_aculeatus Octopus_tetricus Octopus_berrima Macroctopus_maorum;
+	    prset topologypr = constraints (outg);
+	    outgroup Octopus_vulgaris;
+	    " >> 12s_alone.nxs
+echo "	    lset applyto=(1)   nucmodel=doublet;
+	    lset applyto=(2)   nucmodel=4by4;
+	    prset ratepr=variable;
+	    unlink statefreq=(all) revmat=(all) shape=(all) pinvar=(all);" >> 12s_alone.nxs
+
+cat 12s_models_to_write >> 12s_alone.nxs
+
+echo "
+      mcmcp ngen=100000000 printfreq=1000 samplefreq=10000 stoprule=yes stopval=0.01 nruns=5 nchains=2 burninfrac=0.25;
+      mcmc;
+      sump;
+      sumt filename=mb_12s/12s_alone.nxs contype=allcompat conformat=simple;
+
+end;
+" >> 12s_alone.nxs
+
+mkdir mb_12s
+cp 12s_alone.nxs mb_12s/12s_alone.nxs
+```
+
+```{bash, eval=F}
+mpiexec -np 10 mb mb_12s/12s_alone.nxs > mb_12s_log
+```
+
+# COIII Only Tree
+```{r}
+coiii.solo=coiii.final[complete.cases(access$COIII)]
+write.nexus.data(coiii.solo,"coiii_solo.nxs",charsperline = 1000)
+length(coiii.solo$Octopus_vulgaris)+max(nchar(labels(coiii.solo)))+10
+```
+
+
+```{bash}
+sed -i -E 's/(^.{713}).*/\1/g' coiii_solo.nxs
+```
+
+## Writing length variable lines
+```{r}
+write.table(paste("  DIMENSIONS NTAX=",
+                  length(coiii.solo),
+                  " NCHAR=",
+                  length(coiii.solo$Octopus_vulgaris),
+                  ";",sep=""),
+            "coiii_dimensions",
+            row.names = F,col.names = F,quote = F)
+coiii.models=models.muus[grepl("\\(3\\)|\\(4\\)|\\(5\\)",models.muus)]
+coiii.models=gsub("\\(3\\)","(1)",coiii.models)
+coiii.models=gsub("\\(4\\)","(2)",coiii.models)
+coiii.models=gsub("\\(5\\)","(3)",coiii.models)
+write.table(coiii.models,
+            "coiii_models_to_write",row.names = F,col.names = F,quote = F)
+
+write.table(data.frame(models=c(
+            paste("      charset coiii_pos1 =  ",1," - ",length(coiii.solo$Octopus_vulgaris),"\\3;",sep=""),
+            paste("      charset coiii_pos2 =  ",2," - ",length(coiii.solo$Octopus_vulgaris),"\\3;",sep=""),
+            paste("      charset coiii_pos3 =  ",3," - ",length(coiii.solo$Octopus_vulgaris),"\\3;",sep="")
+            )),
+            "charset.coii2",
+            row.names = F,col.names = F,quote = F)
+```
+
+
+## Generating nexus file with MrBayes command block. 
+```{bash, eval=F}
+rm coiii_alone.nxs #just cleaning out previous iteration if running multiple times
+cp -r mb_coiii mb_coiii.backup
+rm -r mb_coiii
+touch coiii_alone.nxs
+echo "#NEXUS" >> coiii_alone.nxs
+echo "BEGIN DATA;" >> coiii_alone.nxs
+sed -n 1p coiii_dimensions >> coiii_alone.nxs
+echo "  FORMAT DATATYPE=DNA MISSING=? GAP=- INTERLEAVE=YES;
+  MATRIX
+  
+  [COIII]" >> coiii_alone.nxs
+sed -n 7,96p coiii_solo.nxs >> coiii_alone.nxs
+echo "
+begin mrbayes;" >> coiii_alone.nxs
+echo " " >> coiii_alone.nxs
+sed -n 1,3p charset.coii2 >> coiii_alone.nxs
+echo " " >> coiii_alone.nxs
+echo "      partition by_gene = 3:coiii_pos1,coiii_pos2,coiii_pos3;" >> coiii_alone.nxs
+echo "	    set partition = by_gene;
+" >> coiii_alone.nxs
+echo "	    constraint outg = Octopus_vulgaris Octopus_rubescens Octopus_bimaculoides Octopus_cyanea Amphioctopus_aegina Hapalochlaena_maculosa Abdopus_aculeatus Octopus_tetricus Octopus_berrima Macroctopus_maorum;
+	    prset topologypr = constraints (outg);
+	    outgroup Octopus_vulgaris;
+	    " >> coiii_alone.nxs
+echo "	    lset applyto=(all)   nucmodel=4by4;
+	    prset ratepr=variable;
+	    unlink statefreq=(all) revmat=(all) shape=(all) pinvar=(all);" >> coiii_alone.nxs
+
+cat coiii_models_to_write >> coiii_alone.nxs
+
+echo "
+      mcmcp ngen=100000000 printfreq=1000 samplefreq=10000 stoprule=yes stopval=0.01 nruns=5 nchains=2 burninfrac=0.25;
+      mcmc;
+      sump;
+      sumt filename=mb_coiii/coiii_alone.nxs contype=allcompat conformat=simple;
+
+end;
+" >> coiii_alone.nxs
+
+mkdir mb_coiii
+cp coiii_alone.nxs mb_coiii/coiii_alone.nxs
+```
+
+```{bash, eval=F}
+mpiexec -np 10 mb mb_coiii/coiii_alone.nxs > mb_coiii_log
+```
+
+# CytB Only Tree
+```{r}
+cytb.solo=cytb.final[complete.cases(access$Cytb)]
+write.nexus.data(cytb.solo,"cytb_solo.nxs",charsperline = 1000)
+length(cytb.solo$Octopus_vulgaris)+max(nchar(labels(cytb.solo)))+10
+```
+
+
+```{bash}
+sed -i -E 's/(^.{810}).*/\1/g' cytb_solo.nxs
+```
+
+## Writing length variable lines
+```{r}
+write.table(paste("  DIMENSIONS NTAX=",
+                  length(cytb.solo),
+                  " NCHAR=",
+                  length(cytb.solo$Octopus_vulgaris),
+                  ";",sep=""),
+            "cytb_dimensions",
+            row.names = F,col.names = F,quote = F)
+cytb.models=models.muus[grepl("\\(6\\)|\\(7\\)|\\(8\\)",models.muus)]
+cytb.models=gsub("\\(6\\)","(1)",cytb.models)
+cytb.models=gsub("\\(7\\)","(2)",cytb.models)
+cytb.models=gsub("\\(8\\)","(3)",cytb.models)
+write.table(cytb.models,
+            "cytb_models_to_write",row.names = F,col.names = F,quote = F)
+
+write.table(data.frame(models=c(
+            paste("      charset cytb_pos1 =  ",1," - ",length(cytb.solo$Octopus_vulgaris),"\\3;",sep=""),
+            paste("      charset cytb_pos2 =  ",2," - ",length(cytb.solo$Octopus_vulgaris),"\\3;",sep=""),
+            paste("      charset cytb_pos3 =  ",3," - ",length(cytb.solo$Octopus_vulgaris),"\\3;",sep="")
+            )),
+            "charset.cytb2",
+            row.names = F,col.names = F,quote = F)
+```
+
+
+## Generating nexus file with MrBayes command block. 
+```{bash, eval=F}
+rm cytb_alone.nxs #just cleaning out previous iteration if running multiple times
+cp -r mb_cytb mb_cytb.backup
+rm -r mb_cytb
+touch cytb_alone.nxs
+echo "#NEXUS" >> cytb_alone.nxs
+echo "BEGIN DATA;" >> cytb_alone.nxs
+sed -n 1p cytb_dimensions >> cytb_alone.nxs
+echo "  FORMAT DATATYPE=DNA MISSING=? GAP=- INTERLEAVE=YES;
+  MATRIX
+  
+  [Cytb]" >> cytb_alone.nxs
+sed -n 7,98p cytb_solo.nxs >> cytb_alone.nxs
+echo "
+begin mrbayes;" >> cytb_alone.nxs
+echo " " >> cytb_alone.nxs
+sed -n 1,3p charset.cytb2 >> cytb_alone.nxs
+echo " " >> cytb_alone.nxs
+echo "      partition by_gene = 3:cytb_pos1,cytb_pos2,cytb_pos3;" >> cytb_alone.nxs
+echo "	    set partition = by_gene;
+" >> cytb_alone.nxs
+echo "	    constraint outg = Octopus_vulgaris Octopus_rubescens Octopus_bimaculoides Octopus_cyanea Amphioctopus_aegina Hapalochlaena_maculosa Abdopus_aculeatus Octopus_tetricus Octopus_berrima Macroctopus_maorum;
+	    prset topologypr = constraints (outg);
+	    outgroup Octopus_vulgaris;
+	    " >> cytb_alone.nxs
+echo "	    lset applyto=(all)   nucmodel=4by4;
+	    prset ratepr=variable;
+	    unlink statefreq=(all) revmat=(all) shape=(all) pinvar=(all);" >> cytb_alone.nxs
+
+cat cytb_models_to_write >> cytb_alone.nxs
+
+echo "
+      mcmcp ngen=100000000 printfreq=1000 samplefreq=10000 stoprule=yes stopval=0.01 nruns=5 nchains=2 burninfrac=0.25;
+      mcmc;
+      sump;
+      sumt filename=mb_cytb/cytb_alone.nxs contype=allcompat conformat=simple;
+
+end;
+" >> cytb_alone.nxs
+
+mkdir mb_cytb
+cp cytb_alone.nxs mb_cytb/cytb_alone.nxs
+```
+
+```{bash, eval=F}
+mpiexec -np 10 mb mb_cytb/coiii_alone.nxs > mb_cytb_log
+```
+
+# plotting the pared down tree
 
 ```{r}
-plot(mrbayes.tree, show.node.label=F,cex=0.3)
+mrbayes.tree.pared=drop.tip(mrbayes.tree,grep("_\\d|rosario",mrbayes.tree$tip.label,value=T))
+```
+
+
+```{r}
+tips.add=mrbayes.tree.pared$tip.label
+tips.add[!grepl("leioderma",tips.add)]=""
+prefix="                                            "
+
+tips.add[tips.add=="Muusoctopus_leioderma_neotype"]=paste(prefix,"(neotype)")
+tips.add[tips.add=="Muusoctopus_leioderma_burrows"]=paste(prefix,"(Burrows Bay)")
+tips.add[tips.add=="Muusoctopus_leioderma_casiz31213"]=paste(prefix,"(CASIZ 31213)")
+tips.add[tips.add=="Muusoctopus_leioderma_rosario"]=""
+
+mrbayes.tree.pared$tip.label[mrbayes.tree.pared$tip.label=="Muusoctopus_leioderma_neotype"]="Muusoctopus leioderma"
+mrbayes.tree.pared$tip.label[mrbayes.tree.pared$tip.label=="Muusoctopus_leioderma_burrows"]="Muusoctopus leioderma"
+mrbayes.tree.pared$tip.label[mrbayes.tree.pared$tip.label=="Muusoctopus_leioderma_casiz31213"]="Muusoctopus leioderma"
+```
+
+
+```{r}
+colors.tip=rep("#8b8b8bff",length(mrbayes.tree.pared$tip.label))
+colors.tip[grep("Muusoctopus",mrbayes.tree.pared$tip.label)]="#e06565ff"#"coral3"
+colors.tip[grep("leioderma",mrbayes.tree.pared$tip.label)]="#2f2c86ff"#"darkcyan"
+colors.tip[grep("Enteroctopus|Sasakiopus|californicus",mrbayes.tree.pared$tip.label)]="#289e31ff"#"darkolivegreen"
+
+
+```
+
+
+```{r}
+nodes95=rep(NA,length(mrbayes.tree.pared$node.label))
+nodes100=rep(NA,length(mrbayes.tree.pared$node.label))
+#nodes[mrbayes.tree.pared$node.label>0]="♦"
+#nodes[mrbayes.tree.pared$node.label>0.95]="■"
+nodes95[mrbayes.tree.pared$node.label>0.95&mrbayes.tree.pared$node.label<0.99999999]="┼"
+nodes100[mrbayes.tree.pared$node.label>0.9999999]="●"
+
+
+#ramp=blue2green2red(1001)
+ramp=hcl.colors(1001,palette="viridis")
+node.colors=rep("black",length(mrbayes.tree.pared$node.label))
+for (i in 2:length(node.colors)){
+  node.colors[i]=ramp[as.numeric(mrbayes.tree.pared$node.label[i])*1000]
+}
+
+#nodes[mrbayes.tree.pared$node.label==1]="†"
+#nodes[mrbayes.tree.pared$node.label>=0.95&mrbayes.tree.pared$node.label<1]="‡"
+#nodes[mrbayes.tree.pared$node.label>=0.90&mrbayes.tree.pared$node.label<0.95]="◊"
+```
+
+
+
+```{r, }
+svg(file="tree_Pared_Enterocopodidae.svg",width=8,height=9)
+  par(fig=c(0,1,0,1))
+  par(mai=c(0,0,0,0))
+  
+  plot(mrbayes.tree.pared,show.node.label=F,use.edge.length=T,align.tip.label=F,edge.width=2,
+     show.tip.label = T,x.lim=0.8,font=3,tip.color = colors.tip)
+  nodelabels(c(NA,rep("♦",length(mrbayes.tree.pared$node.label)-1)), adj = c(0.5, 0.5), frame = "n",
+             cex = 1,font=2,col=node.colors)
+  nodelabels(c(NA,rep("◊",length(mrbayes.tree.pared$node.label)-1)), adj = c(0.45, 0.53), frame = "n",
+             cex = 1.3,font=2,col="black")
+  nodelabels(nodes95, adj = c(0.46, 0.43), frame = "n",
+             cex = 0.5,font=2,col="black")
+  nodelabels(nodes100, adj = c(0.4, 0.43), frame = "n",
+             cex = 0.5,font=2,col="black")
+  tiplabels(tips.add,frame="n",adj=c(0,0.3),col="#2f2c86ff")
+#  nodelabels(mrbayes.tree.pared$node.label,bg=NULL,cex=0.3,frame="none",adj=c(1.1,-0.1))
+    
+    
+# Posterior Probability key
+key.start=0.6
+key.end=0.8
+key.top=41
+key.bottom=40
+interp=round(seq(from=0,to=1,by=0.001),3)
+
+key.points=seq(from=key.start,to=key.end,length.out=length(interp))
+  for(i in 1:length(key.points)){
+    lines(rep(key.points[i],2),c(key.bottom,key.top),col=ramp[i],lwd=2)
+  }
+lines(c(key.start,key.end,key.end,key.start,key.start),c(key.bottom,key.bottom,key.top,key.top,key.bottom),lwd=2)
+text(key.points[c(1,length(interp)/2,length(interp))],rep(key.top+1,3)
+     ,c(0,0.5,1),cex=1,font=1)
+lines(c(key.points[length(interp)/2],key.points[length(interp)/2]),c(key.top+0.4,key.top),lwd=2)
+lines(c(key.points[1],key.points[1]),c(key.top+0.4,key.top),lwd=2)
+lines(c(key.points[length(interp)],key.points[length(interp)]),c(key.top+0.4,key.top),lwd=2)
+text((key.start+key.end)/2,key.top+2,'posterior probability')
+
+points(0.8,39,pch="♦",col=ramp[999])
+points(0.8002,38.975,pch="◊",cex=1.3)
+points(0.8005,38.95,pch="┼",cex=0.5,font=2)
+text(0.8,39,"0.95<pp<1.00:  ",adj=c(1,0.5))
+
+points(0.8,38,pch="♦",col=ramp[1001])
+points(0.8002,37.975,pch="◊",cex=1.3)
+points(0.8006,37.98,pch="●",cex=0.5,font=2)
+text(0.8,38,"pp=1.00:  ",adj=c(1,0.5))
+
+
+
+#  lines(c(0,1),c(0,50))
+dev.off()
 ```
 
 

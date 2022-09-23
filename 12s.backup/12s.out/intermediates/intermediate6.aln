@@ -1,0 +1,21 @@
+CLUSTAL W --- LocARNA 2.0.0RC8 --- Score: 55359
+
+                       .....(((((.(((((((.(((((....---(((((....))))).(((((((......................)))))..))((((((...))))))..)))))))))).......((
+Amphioctopus_aegina    CUAUAUUUUAAAGUGUAAAAAUUGAUUU---UAUUUACCUAAGUAUUAUGAAGAUAAAUAUUGUUUAUUAUCAAUUUUUAUUUAAAACUUAAAAAGUUUGGCGGUUUUACAUAUCCAGUU
+Hapalochlaena_maculosa -----UUUUAUAAUGUAAAAAUUGAGAUAAAUAUUUACCUAAGUAUUAUGAAU-----------------UUUUUAUUUAUUUAAAACUUAAAAAGUUUGGCGGUUUUACAUAUCCAUUU
+                       -----(((((.(((((((.(((((.......(((((....))))).(((((((-----------------.....)))))..))((((((...))))))..)))))))))).......((
+
+                       ((((.((((((((((..(((..((......))....))).(((....((((((......(((((((((......))))).))))(((((.........))))).(((((((.(((...((
+Amphioctopus_aegina    AGGGGAGUCUGUUAAUAUAAUUUGAUAAUCCACAUUUUAAACUAAUUUUUUUUUGAUAUUAUAAUUAUUUUUAUAUAAUUUAUAACAGUUUAUAUAUUGCUGUCGUCAGUUUAUAUUUUA
+Hapalochlaena_maculosa AGGGGAGUCUGUUAAUAUAAUUUGAUAAUCCGCAUUUUAAACUAAUUUUUUUUUGAUAUUAUAAUUAUGU---UAUAGU-UAUAACAGUUUAUAUAUUGCUGUCGUUAGUUUAUGUUUUG
+                       ((((.((((((((((..(((..((......))....))).(((....((((((......(((((((((..---.)))))-))))(((((.........))))).(((((((.(((...((
+
+                       ................))(((((...))))).(((((......)))))))))))))))))))))))))))))))))).))))))....((..((.((((......))((((((((.....
+Amphioctopus_aegina    AGAAUUAAAGAACUAGUGAAUAUUUUAUAUUGUUAUGUCAAGUCAUAAUGUAGCUGAUGAAAAAGGUUUAAUGGACUACUUUAAUUGAUUUUAUUUGUUAAUCCGGAUAAUGAAGAUUAU
+Hapalochlaena_maculosa AGGUUAAAAGAACUAUUAAAUAUUACAUGUUGUUAUGUCAAGUCAUAAUGUAGCUAAUAAAAAAGGUUUGAUGGACUACUUUAAUUAAUUUCAUUUAUUA--CCAGAUAAUAAAAAUUAU
+                       ................))(((((...))))).(((((......)))))))))))))))))))))))))))))))))).))))))....((..((.((((.--...))((((((((.....
+
+                       .)))))))).((((.....)))).)))).))((((((((........)))))))).........)).)))))...
+Amphioctopus_aegina    AUUUUAUUAGUAAGGUGGACUUAAUAGUAAAUUAAUGAUUAGUAUGCAUUGUUGAAUAUUGGUUUUGUAAAAUGU
+Hapalochlaena_maculosa AUUUUGUUAGUAAGGUGGACUUAAUAGUAAAUUAAUAAUUAGUAUGUAUUGUUGAAUGUAGGUUUUGUAAGAUG-
+                       .)))))))).((((.....)))).)))).))((((((((........)))))))).........)).)))))..-

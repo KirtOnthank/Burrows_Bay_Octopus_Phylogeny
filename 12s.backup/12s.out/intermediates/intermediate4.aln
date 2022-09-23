@@ -1,0 +1,21 @@
+CLUSTAL W --- LocARNA 2.0.0RC8 --- Score: 64810
+
+                   .....(((((((((((.......))))))).(((((.((.(((((((((...((.((((((((.....))))))....)).))...))))))))))))))))((((.((((.(((...((
+Octopus_berrima    UUUGUUUUUGUAAAAAUUAAUUAUUUUUACCUAAGUAUUAUGAAUGUAAUUUAAAUAUAGUUUGUUUGGGAUUAUACAUAUUUAAUUUAUAUUUAAAACUUAAAAGGUUUGGCGGUUUUA
+Macroctopus_maorum UUUUUUUUUGUAAAAGUUGAUU-UUUUUACCUAAGUAUUAUGAAUGUAAUUAAAGAUGUUUUAUAUUAUAAAAUU---AUAUUGAUUUAUGUUUAAAACUUAAAAGGUUUGGCGGUUUUA
+                   .....(((((((((((......-))))))).(((((.((.(((((((((...((.((((((((.....)))))).---)).))...))))))))))))))))((((.((((.(((...((
+
+                   (((((..((((((((((..(((((((.....))))))))))))...((((((((...(((((.(((((((((((........)))))))))))...(((..(((((...((((.......
+Octopus_berrima    CAUAUCCAGUUAGGGGAGUUUGUUAAUUUGUUUGAUAAUCCUCAUUUUAAACUUACUUUUUUUUGAUAUAUAAAAUAUACAGUUUAUAUAUUGCUGUCGUCAGUUUAUGUUUUGAGAAUU
+Macroctopus_maorum CAUAUCCAGUUAGGGGAGUUUGUUAAUUUGUUUGAUAAUCCUCAUUUUAAACUUACUUUUUUUUGAUAUAUAAGUUAUACAGUUUAUAUAUUGCUGUCGUCAGUUUAUCUUUUGAGAA-A
+                   (((((..((((((((((..(((((((.....))))))))))))...((((((((...(((((.(((((((((((........)))))))))))...(((..(((((...((((.....-.
+
+                   ))))))))).))).....(((..((((((((......))))))..)).))).))))))))))))).((..((((((....((.........---.((...((((((((......))))))
+Octopus_berrima    AAAAGAACUGUGAAAUUUUUAAGUUAUUAUGUCAAGUCAUAAUGUAGCUAAUAAGAAAGGUUUAAUGAACUACUGUAAAUAAUGUUUUUUA---UUCGGAUAAUAAAAGUUAUAUUUUAU
+Macroctopus_maorum AAAAGAACUAUGAAAUUUUUAGAUUGUUAUGUCAAGUCAUAAUGUAGCUAAUGAAAAAGGUUUAAUGAACUACUAUAAAUAAUAUUUUUUAAUGUCCGGAUAAUAGAAAUUAAAUUUUGU
+                   ))))))))).))).....(((..((((((((......))))))..)).))).))))))))))))).((..((((((....((.............((...((((((((......))))))
+
+                   ))....)).....)).))))))...)).))))).)))))))...)))..)))).))))..))))..
+Octopus_berrima    UAGAAAGAGGGACUUAAUAGUAAAUUUAUAAUUAGUAUGUGUAAUUGAAUAAGGUUUUGUAAAAUG
+Macroctopus_maorum UAAAAAGGUGGACUUAAUAGUAAAAUUAUAAUUAGUAUGUAAAUUUGAAUAAGGUUUUGUAAAAUG
+                   ))....)).....)).))))))...)).))))).)))))))...)))..)))).))))..))))..

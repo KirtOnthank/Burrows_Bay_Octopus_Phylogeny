@@ -330,8 +330,12 @@ begin mrbayes;
            465 466 474 475 476 477 478 479 480 481 482 483 484 485 486 487 488 489 490 
            491 492 493 494 495 496;
  
-      charset coiii =  497 - 1160;
-      charset cytb =  1161 - 1926;
+      charset coiii_pos1 =  497 - 1160\3;
+      charset coiii_pos2 =  498 - 1160\3;
+      charset coiii_pos3 =  499 - 1160\3;
+      charset cytb_pos1 =  1161 - 1926\3;
+      charset cytb_pos2 =  1162 - 1926\3;
+      charset cytb_pos3 =  1163 - 1926\3;
  
       partition by_gene = 8:12s-stems,12s-loops,coiii_pos1,coiii_pos2,coiii_pos3,cytb_pos1,cytb_pos2,cytb_pos3;
 	    set partition = by_gene;

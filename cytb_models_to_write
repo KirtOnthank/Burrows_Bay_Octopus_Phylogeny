@@ -1,0 +1,3 @@
+      lset applyto=(1) nst=2 rates=invgamma;
+      lset applyto=(2) nst=2 rates=invgamma;
+      lset applyto=(3) nst=2 rates=propinv;

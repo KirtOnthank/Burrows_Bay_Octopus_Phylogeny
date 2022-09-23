@@ -1,0 +1,2 @@
+      lset applyto=(1) nst=6 rates=invgamma;
+      lset applyto=(2) nst=2 rates=gamma;

@@ -1,0 +1,25 @@
+CLUSTAL W --- LocARNA 2.0.0RC8
+
+                   ..........((.(((......-))).))..................----------(((((((...)))))))----.................((((((...))))))..........
+Octopus_rubescens  UUUUUUAGUGUAAAAGUGAAAU-UUUCUACUUAAGUAUUAUGAAGGG----------UGUUAAUUAUAUUAAUG----AUAUAAAAUUAUAUUUAAAACUUAAAAAGUUUGGCGGUCUUA
+Octopus_berrima    UUUGUUUUUGUAAAAAUUAAUUAUUUUUACCUAAGUAUUAUGAAUGUAAUUUAAAUAUAGUUUGUUUGGGAUUAUACAUAUUUAAUUUAUAUUUAAAACUUAAAAGGUUUGGCGGUUUUA
+Macroctopus_maorum UUUUUUUUUGUAAAAGUUGAUU-UUUUUACCUAAGUAUUAUGAAUGUAAUUAAAGAUGUUUUAUAUUAUAAAAUU---AUAUUGAUUUAUGUUUAAAACUUAAAAGGUUUGGCGGUUUUA
+                   ..........((.(((.......))).))............................(((((((...))))))).....................((((((...))))))..........
+
+                   .........((((((((..(((((((.....))))))))))....))).)).............(((((((((((................))))))))))).............((((.
+Octopus_rubescens  CAUAUCCAGUUAGGGGAGUUUGUUAAUUGAUUUGAUAAUCCACAUUUUAAACUUACUUUUUUUUGUAUAUAUAUAUAUAUAUAUAUGUAUGUAUGUAUGUAUCAGUUUAUAUAUUGCUGU
+Octopus_berrima    CAUAUCCAGUUAGGGGAGUUUGUUAAUUUGUUUGAUAAUCCUCAUUUUAAACUUACUUUUUUUUGAUAUAUAAAAUAUACA----------GUUUAUAUAUU-------------GCUGU
+Macroctopus_maorum CAUAUCCAGUUAGGGGAGUUUGUUAAUUUGUUUGAUAAUCCUCAUUUUAAACUUACUUUUUUUUGAUAUAUAAGUUAUACA----------GUUUAUAUAUU-------------GCUGU
+                   .........((((((((..(((((((.....))))))))))....))).)).............(((((((((((......----------)))))))))))-------------((((.
+
+                   ...))))......(((((...)))))-......................(((((......)))))........((((((...((((((...(((((((....((((((.......))...
+Octopus_rubescens  CGUCAGUUUAUAUUUUGAGAGUUAAA-GGACUAUGUAAGAUUUUAUUUUUUAUGUCAAGUCAUAAUGUAGCUUAUAAAAAAGGUUUAAUGGACUACUAUAAUUAAUGUUAUUUAUAUAUC
+Octopus_berrima    CGUCAGUUUAUGUUUUGAGAAUUAAAAGAACUGUGAAAUUUUUAAGUUAUUAUGUCAAGUCAUAAUGUAGCUAAUAAGAAAGGUUUAAUGAACUACUGUAAAUAAUGUUUUUUA----UU
+Macroctopus_maorum CGUCAGUUUAUCUUUUGAGAA-AAAAAGAACUAUGAAAUUUUUAGAUUGUUAUGUCAAGUCAUAAUGUAGCUAAUGAAAAAGGUUUAAUGAACUACUAUAAAUAAUAUUUUUUA-AUGUC
+                   ...))))......(((((...))))).......................(((((......)))))........((((((...((((((...(((((((....((((((......-))...
+
+                   ....((((((((......))))))))..(((.....))).........))))....))))).))....))))))....))))))......
+Octopus_rubescens  CAGAUAGUAGAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAUAGUAAAAUUAUAAUUAGUAUGUAUUUUUGAAUAUGGUUUUGUAAGGUG
+Octopus_berrima    CGGAUAAUAAAAGUUAUAUUUUAUUAGAAAGAGGGACUUAAUAGUAAAUUUAUAAUUAGUAUGUGUAAUUGAAUAAGGUUUUGUAAAAUG
+Macroctopus_maorum CGGAUAAUAGAAAUUAAAUUUUGUUAAAAAGGUGGACUUAAUAGUAAAAUUAUAAUUAGUAUGUAAAUUUGAAUAAGGUUUUGUAAAAUG
+                   ....((((((((......))))))))..(((.....))).........))))....))))).))....))))))....))))))......
