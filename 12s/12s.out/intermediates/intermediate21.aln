@@ -1,21 +1,21 @@
-CLUSTAL W --- LocARNA 2.0.0RC8 --- Score: 80315
+CLUSTAL W --- LocARNA 2.0.0RC8 --- Score: 57978
 
-                        ...((.(((((((((....(((((((....))))))).(((((((((........)))))))))((.(((((((((((...))...((((((..........)).))))(((((..((((
-Muusoctopus_oregonensis UUUUGAUUUAUAAAAAUUGGUAAUACCUAAGUAUUAUGAAAAUAUUAUUUUGUAUUAAUAUUUUGUUGUUUAAAACUUAAAAGGUUUGGCGGUUUUACAUAUCCAGUUAGGGGAGUUUGU
-Muusoctopus_sp._E       UUUUGAUUUAUAAAAAUUGAUAAUACCUAAGUAUUAUGAAAAUAUUAUUUUGUGUUAAUAUUUUGUUGUUUAAAACUUAAAAGGUUUGGCGGUUUUACAUAUCCAGUUAGGGGAGUUUGU
-                        ...((.(((((((((....(((((((....))))))).(((((((((........)))))))))((.(((((((((((...))...((((((..........)).))))(((((..((((
+                   .......................((((((......)).))))-(((((....(((((((((((((((.....)))))))))((((((((.....(((((...))))))))))))))).))
+Octopus_tetricus   AGAGACCCUAUUWUUUYUUAUUGUAAAAAUUAAUUUUGUUUA-CCUAAGUAUUAUGAAAAUGAUUAAGAUAGUUAGUUAUUGAUUGUUAUUUAAAACUUAAAAGGUUUGGCGGUUUUACA
+Octopus_vulgaris   -------CUAUUAUUUCUUAUUGUAAAAAUUGAUUUUGUUUACCCUAAGUAUUAUGAAAAUGACUAAGAUAGUUAGUUAUUGAUUGUUGUUUAAAACUUAAAAGGUUUGGCGGUUUUACA
+                   -------................((((((......)).)))).(((((....(((((((((((((((.....)))))))))((((((((.....(((((...))))))))))))))).))
 
-                        (((.....)))))))))))))))))))))..))..((((((((((.......(((((((...))))))).((((...((((((....((((((......))))))))))))......(((
-Muusoctopus_oregonensis UAAUUGAUUUGAUGAUCCUCGUUUUAAACUUACUUUUUUUUGUUAUAUUUAUAUAUACAGUUUGUGUAUUGCUGUCGUUAGUUUAUGUUUUGAGAAUUAUUAAAAGACUAGAAAAUGUAU
-Muusoctopus_sp._E       UAAUUGAUUUGAUGAUCCUCGUUUUAAACUUACUUUUUUUUGUUAUAUUUGUAUAUACAGUUUGUAUAUUGCUGUCGUUAGUUUAUGUUUUAAGAAUUAUUAAAAGACUAGAAAAUGUGU
-                        (((.....)))))))))))))))))))))..))..((((((((((.......(((((((...))))))).((((...((((((....((((((......))))))))))))......(((
+                   )).....))))).((..(((((((......)))))))))..................................--------------.((((....))))(((..((((....)))).))
+Octopus_tetricus   UAUCCAGUUAGGGGAGUUUGUUAAUAUAAUUUGAUAAUCCMCAUUUUAAACUUACUUUUUUUUGNNNNAAUUA--------------UAUAACGGUUUAUAUAUUGCUGUCGACAGUUUA
+Octopus_vulgaris   UAUCCAGUUAGGGGAGUUUGUUAAUAUAAUUUGAUAAUCCACAUUUUAAACUUACUUUUUUUUGAAUUAUAUAUAUAUAUAUAUAUGUAUAACGGUUUAUAUAUUGCUGUCGGCAGUUUA
+                   )).....))))).((..(((((((......))))))))).................................................((((....))))(((..((((....)))).))
 
-                        (((((((.....)))))))..)))))))))))))))))(((((...)))))..((((((((...))))))))...((((((((((..((((((..(((((((..(((.....)))..)))
-Muusoctopus_oregonensis UGAUUUAUAUGUUAAGUCAUAAUGCAGCUAAUAAAAAAGGUUUAAUGAACUACUUUAAUAAAUUUUAUUAAAUAUCCGGAUUUUAGAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAUAG
-Muusoctopus_sp._E       UGAUUUAUAUGUUAAGUCAUAAUGCAGCUAAUAAAAAAGGUUUAAUGAACUACUUUAAUGAAUUUUAUUAAAUAUCCGGAUUUUAGAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAUAG
-                        (((((((.....)))))))..)))))))))))))))))(((((...)))))..((((((((...))))))))...((((((((((..((((((..(((((((..(((.....)))..)))
+                   )(((((((((..........))))))).......)).....(((((((((........((((((((((..(((((...)))))....((((((..........................)
+Octopus_tetricus   UAUUUUAAGAGUAAAAGGACUUUUGAAUUUUAGGAUUUAUAUGUCAAGUCAUAAUGUAGCUGAUAAAGAAGGUUUAAUGGACUACUAUAAUUUAUAUUAUUUAUUUAUCYGGDDAAKGAA
+Octopus_vulgaris   UAUUUUAAGAAUAAAAGGACUUUUGAAUUUUAGGAUUUAUAUGUCAAGUCAUAAUGUAGCUGAUAAAGAAGGUUUAAUGGACUACUAUAAUUUAUAUUAUUUACUUAUCCGGAUAAUGAA
+                   )(((((((((..........))))))).......)).....(((((((((........((((((((((..(((((...)))))....((((((..........................)
 
-                        ))))..))))))..)).........))))))))))))))))).))
-Muusoctopus_oregonensis UAAAUAAUAAUUAGUGUGUAUUAUUGAAUUUGGUUUUGUAGAGUG
-Muusoctopus_sp._E       UAAAUAAUAAUUAGUGUGUAUUAUUGAAUUUGGUUUUGUAGAGUG
-                        ))))..))))))..)).........))))))))))))))))).))
+                   )))))..))))))))))......))))))))).------------------------------------------------
+Octopus_tetricus   AAUUAAAUUUUGUUAGUAAGGDGGACUUGAUAG------------------------------------------------
+Octopus_vulgaris   AAUUAAAUUUUGUUAGUAAGGUGGACUUGAUAGUAAACUUGAUUAUUAGUAUGUGUAGUUGAAUGUGGUUUUGUAAAGUGU
+                   )))))..))))))))))......))))))))).................................................

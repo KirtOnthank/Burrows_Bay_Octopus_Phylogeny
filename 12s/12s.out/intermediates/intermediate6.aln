@@ -1,21 +1,21 @@
-CLUSTAL W --- LocARNA 2.0.0RC8 --- Score: 55359
+CLUSTAL W --- LocARNA 2.0.0RC8 --- Score: 80693
 
-                       .....(((((.(((((((.(((((....---(((((....))))).(((((((......................)))))..))((((((...))))))..)))))))))).......((
-Amphioctopus_aegina    CUAUAUUUUAAAGUGUAAAAAUUGAUUU---UAUUUACCUAAGUAUUAUGAAGAUAAAUAUUGUUUAUUAUCAAUUUUUAUUUAAAACUUAAAAAGUUUGGCGGUUUUACAUAUCCAGUU
-Hapalochlaena_maculosa -----UUUUAUAAUGUAAAAAUUGAGAUAAAUAUUUACCUAAGUAUUAUGAAU-----------------UUUUUAUUUAUUUAAAACUUAAAAAGUUUGGCGGUUUUACAUAUCCAUUU
-                       -----(((((.(((((((.(((((.......(((((....))))).(((((((-----------------.....)))))..))((((((...))))))..)))))))))).......((
+                                      ...((.(((((((((.((.(((((((....))))))).(((((((((........)))))))))..((((((((((.((((.....(((((((..((((((.......((((((((..((
+Muusoctopus_longibrachus_longibrachus UUUUGAUUUAUAAAGAUUGAUAAUACCUAAGUAUUAUGAAAAUGUUAUUUUGUAUUGAUAUUUUGUUUUUUAAAACUUAAAAGGUUUGGCGGUUUUACAUAUCCAGUUAGGGGAGUUUGU
+Muusoctopus_longibrachus_akambei      UUUUGAUUUAUAAAGAUUGGUAAUACCUAAGUAUUAUGAAAAUGUUAUUUUGUAUUGAUAUUUUGUUUUUUAAAACUUAAAAGGUUUGGCGGUUUUACAUAUCCAGUUAGGGGAGUUUGU
+                                      ...((.(((((((((.((.(((((((....))))))).(((((((((........)))))))))..((((((((((.((((.....(((((((..((((((.......((((((((..((
 
-                       ((((.((((((((((..(((..((......))....))).(((....((((((......(((((((((......))))).))))(((((.........))))).(((((((.(((...((
-Amphioctopus_aegina    AGGGGAGUCUGUUAAUAUAAUUUGAUAAUCCACAUUUUAAACUAAUUUUUUUUUGAUAUUAUAAUUAUUUUUAUAUAAUUUAUAACAGUUUAUAUAUUGCUGUCGUCAGUUUAUAUUUUA
-Hapalochlaena_maculosa AGGGGAGUCUGUUAAUAUAAUUUGAUAAUCCGCAUUUUAAACUAAUUUUUUUUUGAUAUUAUAAUUAUGU---UAUAGU-UAUAACAGUUUAUAUAUUGCUGUCGUUAGUUUAUGUUUUG
-                       ((((.((((((((((..(((..((......))....))).(((....((((((......(((((((((..---.)))))-))))(((((.........))))).(((((((.(((...((
+                                      (...(((..(((......)))..))))))..))))))))((((.((((....))))))))..))))))..)))))))....)))).))))))))))..(((....)))((.....(((((
+Muusoctopus_longibrachus_longibrachus UAAUUGAUUUGAUGAUCCUCAUUUUAAACUUACUUUUUUUUGUAAUAUUAAUAUAUACAGUUUGUGUAUUGCUGUCGUUAGUUUAUGUUUUGAGAAUUGUUAAAAGACUAGAAAAUGUAU
+Muusoctopus_longibrachus_akambei      UAAUUGAUUUGAUGAUCCUCAUUUUAAACUUACUUUUUUUUGUUAUAUUAAUAUAUACAGUUUGUGUAUUGCUGUCGUUAGUUUAUGUUUUGAGAAUUGUUAAAAGACUAGAAAAUGUAU
+                                      (...(((..(((......)))..))))))..))))))))((((.((((....))))))))..))))))..)))))))....)))).))))))))))..(((....)))((.....(((((
 
-                       ................))(((((...))))).(((((......)))))))))))))))))))))))))))))))))).))))))....((..((.((((......))((((((((.....
-Amphioctopus_aegina    AGAAUUAAAGAACUAGUGAAUAUUUUAUAUUGUUAUGUCAAGUCAUAAUGUAGCUGAUGAAAAAGGUUUAAUGGACUACUUUAAUUGAUUUUAUUUGUUAAUCCGGAUAAUGAAGAUUAU
-Hapalochlaena_maculosa AGGUUAAAAGAACUAUUAAAUAUUACAUGUUGUUAUGUCAAGUCAUAAUGUAGCUAAUAAAAAAGGUUUGAUGGACUACUUUAAUUAAUUUCAUUUAUUA--CCAGAUAAUAAAAAUUAU
-                       ................))(((((...))))).(((((......)))))))))))))))))))))))))))))))))).))))))....((..((.((((.--...))((((((((.....
+                                      (((((((.....)))))))..))))).....))....(((((((((((((((((((((((.....)))))))...............((((((..(((((((..(((.....)))..)))
+Muusoctopus_longibrachus_longibrachus UGAUUUAUAUGUUAAGUCAUAAUGCAGCUAAUAAAAAAGGUUUAAUGAACUACUUUAAUAUAUUUUAUUAAAUAUCCGGAUUUUAGAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAUAG
+Muusoctopus_longibrachus_akambei      UGAUUUAUAUGUUAAGUCAUAAUGCAGCUAAUAAAAAAGGUUUAAUGAACUACUUUAAUAAAUUUUAUUAAAAAUCCGGAUUUUAGAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAUAG
+                                      (((((((.....)))))))..))))).....))....(((((((((((((((((((((((.....)))))))...............((((((..(((((((..(((.....)))..)))
 
-                       .)))))))).((((.....)))).)))).))((((((((........)))))))).........)).)))))...
-Amphioctopus_aegina    AUUUUAUUAGUAAGGUGGACUUAAUAGUAAAUUAAUGAUUAGUAUGCAUUGUUGAAUAUUGGUUUUGUAAAAUGU
-Hapalochlaena_maculosa AUUUUGUUAGUAAGGUGGACUUAAUAGUAAAUUAAUAAUUAGUAUGUAUUGUUGAAUGUAGGUUUUGUAAGAUG-
-                       .)))))))).((((.....)))).)))).))((((((((........)))))))).........)).)))))..-
+                                      ))))..)))))).))).)).)))))))))))))))))))))).))
+Muusoctopus_longibrachus_longibrachus UAAAUAAUAAUUAGUGUGUAUUAUUGAAUUUGGUUUUGUAGAGUG
+Muusoctopus_longibrachus_akambei      UAAAUAAUAAUUAGUGUGUAUUAUUGAAUUUGGUUUUGUAGAGUG
+                                      ))))..)))))).))).)).)))))))))))))))))))))).))

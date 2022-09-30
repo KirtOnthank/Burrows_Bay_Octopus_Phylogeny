@@ -1,0 +1,9 @@
+---
+output: odt_document
+---
+```{r echo=FALSE}
+library(knitr)
+models.table=read.csv("models_selected.csv")
+kable(models.table,align=c("l","c","c","c","c","r"))
+```
+

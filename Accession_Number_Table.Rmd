@@ -1,0 +1,16 @@
+---
+output: odt_document
+---
+
+```{r echo=FALSE}
+library(knitr)
+access=read.csv("Enteroctopodidae_and_Outgroup.csv",na.strings = "")
+colnames(access)=c("NA.","X12s","COIII","Cytb","notes")
+access=access[,1:4] #Dropping the notes column
+access=access[complete.cases(access)|access$NA.=="Octopus_rubescens",] 
+access=access[!grepl("_\\d",access$NA.),]
+access.kable=access
+colnames(access.kable)=c("species","12s","COIII","CytB")
+access.kable$species=gsub("_"," ",access.kable$species)
+kable(access.kable,row.names = F,align=c("l","c","c","c"))
+```

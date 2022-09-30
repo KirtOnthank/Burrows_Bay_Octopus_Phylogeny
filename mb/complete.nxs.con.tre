@@ -1,7 +1,7 @@
 #NEXUS
-[ID: 6838112690]
+[ID: 7561629534]
 begin taxa;
-	dimensions ntax=90;
+	dimensions ntax=27;
 	taxlabels
 		Octopus_vulgaris
 		Octopus_rubescens
@@ -14,85 +14,22 @@ begin taxa;
 		Octopus_berrima
 		Macroctopus_maorum
 		Muusoctopus_leioderma_casiz31213
-		Muusoctopus_leioderma_burrows
+		Burrows_Bay_octopus
 		Muusoctopus_leioderma_neotype
-		Muusoctopus_leioderma_rosario
 		Muusoctopus_eureka
-		Muusoctopus_eureka_2
-		Muusoctopus_eureka_3
-		Muusoctopus_eureka_4
-		Muusoctopus_levis
-		Muusoctopus_levis_2
 		Muusoctopus_oregonensis
-		Muusoctopus_thielei
 		Muusoctopus_yaquinae
-		Muusoctopus_hydrothermalis
-		Muusoctopus_hydrothermalis_2
-		Muusoctopus_longibrachus
-		Muusoctopus_rigbyae
-		Muusoctopus_rigbyae_2
-		Muusoctopus_tangaroa
-		Muusoctopus_tangaroa_2
-		Muusoctopus_tangaroa_3
-		Muusoctopus_tangaroa_4
-		Muusoctopus_tangaroa_5
-		Muusoctopus_normani
-		Muusoctopus_normani_2
-		Muusoctopus_normani_3
-		Muusoctopus_normani_4
-		Muusoctopus_longibrachus_akambei
-		Muusoctopus_longibrachus_akambei_2
-		Muusoctopus_longibrachus_akambei_3
-		Muusoctopus_eicomar
-		Muusoctopus_eicomar_2
-		Muusoctopus_eicomar_3
-		Muusoctopus_eicomar_4
-		Muusoctopus_eicomar_5
-		Muusoctopus_johnsonianus
-		Muusoctopus_johnsonianus_2
-		Muusoctopus_sp._A
-		Muusoctopus_sp._A_2
-		Muusoctopus_sp._A_3
-		Muusoctopus_cf._profundorum
-		Muusoctopus_cf._profundorum_2
-		Muusoctopus_sp._B
-		Muusoctopus_sp._B_2
-		Muusoctopus_sp._E
-		Muusoctopus_cf._levis
-		Muusoctopus_cf._rigbyae_AL
-		Muusoctopus_cf._rigbyae_AS
-		Muusoctopus_sp.
-		Muusoctopus_sp._MV
 		Muusoctopus_longibrachus_longibrachus
-		Muusoctopus_longibrachus_longibrachus_2
-		Muusoctopus_longibrachus_longibrachus_3
-		Muusoctopus_longibrachus_longibrachus_4
-		Muusoctopus_longibrachus_longibrachus_5
-		Muusoctopus_longibrachus_longibrachus_6
-		Muusoctopus_longibrachus_longibrachus_7
-		Muusoctopus_longibrachus_longibrachus_8
-		Muusoctopus_longibrachus_2
+		Muusoctopus_rigbyae
+		Muusoctopus_normani
+		Muusoctopus_longibrachus_akambei
+		Muusoctopus_johnsonianus
+		Muusoctopus_sp._A
+		Muusoctopus_cf._profundorum
+		Muusoctopus_sp._B
 		Octopus_californicus
-		Octopus_californicus_2
-		Octopus_californicus_3
 		Enteroctopus_dofleini
-		Enteroctopus_dofleini_2
-		Enteroctopus_dofleini_3
 		Enteroctopus_megalocyathus
-		Enteroctopus_megalocyathus_2
-		Enteroctopus_megalocyathus_3
-		Enteroctopus_megalocyathus_4
-		Enteroctopus_megalocyathus_5
-		Enteroctopus_megalocyathus_6
-		Enteroctopus_megalocyathus_7
-		Enteroctopus_zealandicus
-		Enteroctopus_zealandicus_2
-		Enteroctopus_zealandicus_3
-		Enteroctopus_zealandicus_4
-		Enteroctopus_zealandicus_5
-		Enteroctopus_sp.
-		Enteroctopus_sp._2
-		Sasakiopus_salebrosus
 		;
 end;
 begin trees;
@@ -108,89 +45,26 @@ begin trees;
 		9	Octopus_berrima,
 		10	Macroctopus_maorum,
 		11	Muusoctopus_leioderma_casiz31213,
-		12	Muusoctopus_leioderma_burrows,
+		12	Burrows_Bay_octopus,
 		13	Muusoctopus_leioderma_neotype,
-		14	Muusoctopus_leioderma_rosario,
-		15	Muusoctopus_eureka,
-		16	Muusoctopus_eureka_2,
-		17	Muusoctopus_eureka_3,
-		18	Muusoctopus_eureka_4,
-		19	Muusoctopus_levis,
-		20	Muusoctopus_levis_2,
-		21	Muusoctopus_oregonensis,
-		22	Muusoctopus_thielei,
-		23	Muusoctopus_yaquinae,
-		24	Muusoctopus_hydrothermalis,
-		25	Muusoctopus_hydrothermalis_2,
-		26	Muusoctopus_longibrachus,
-		27	Muusoctopus_rigbyae,
-		28	Muusoctopus_rigbyae_2,
-		29	Muusoctopus_tangaroa,
-		30	Muusoctopus_tangaroa_2,
-		31	Muusoctopus_tangaroa_3,
-		32	Muusoctopus_tangaroa_4,
-		33	Muusoctopus_tangaroa_5,
-		34	Muusoctopus_normani,
-		35	Muusoctopus_normani_2,
-		36	Muusoctopus_normani_3,
-		37	Muusoctopus_normani_4,
-		38	Muusoctopus_longibrachus_akambei,
-		39	Muusoctopus_longibrachus_akambei_2,
-		40	Muusoctopus_longibrachus_akambei_3,
-		41	Muusoctopus_eicomar,
-		42	Muusoctopus_eicomar_2,
-		43	Muusoctopus_eicomar_3,
-		44	Muusoctopus_eicomar_4,
-		45	Muusoctopus_eicomar_5,
-		46	Muusoctopus_johnsonianus,
-		47	Muusoctopus_johnsonianus_2,
-		48	Muusoctopus_sp._A,
-		49	Muusoctopus_sp._A_2,
-		50	Muusoctopus_sp._A_3,
-		51	Muusoctopus_cf._profundorum,
-		52	Muusoctopus_cf._profundorum_2,
-		53	Muusoctopus_sp._B,
-		54	Muusoctopus_sp._B_2,
-		55	Muusoctopus_sp._E,
-		56	Muusoctopus_cf._levis,
-		57	Muusoctopus_cf._rigbyae_AL,
-		58	Muusoctopus_cf._rigbyae_AS,
-		59	Muusoctopus_sp.,
-		60	Muusoctopus_sp._MV,
-		61	Muusoctopus_longibrachus_longibrachus,
-		62	Muusoctopus_longibrachus_longibrachus_2,
-		63	Muusoctopus_longibrachus_longibrachus_3,
-		64	Muusoctopus_longibrachus_longibrachus_4,
-		65	Muusoctopus_longibrachus_longibrachus_5,
-		66	Muusoctopus_longibrachus_longibrachus_6,
-		67	Muusoctopus_longibrachus_longibrachus_7,
-		68	Muusoctopus_longibrachus_longibrachus_8,
-		69	Muusoctopus_longibrachus_2,
-		70	Octopus_californicus,
-		71	Octopus_californicus_2,
-		72	Octopus_californicus_3,
-		73	Enteroctopus_dofleini,
-		74	Enteroctopus_dofleini_2,
-		75	Enteroctopus_dofleini_3,
-		76	Enteroctopus_megalocyathus,
-		77	Enteroctopus_megalocyathus_2,
-		78	Enteroctopus_megalocyathus_3,
-		79	Enteroctopus_megalocyathus_4,
-		80	Enteroctopus_megalocyathus_5,
-		81	Enteroctopus_megalocyathus_6,
-		82	Enteroctopus_megalocyathus_7,
-		83	Enteroctopus_zealandicus,
-		84	Enteroctopus_zealandicus_2,
-		85	Enteroctopus_zealandicus_3,
-		86	Enteroctopus_zealandicus_4,
-		87	Enteroctopus_zealandicus_5,
-		88	Enteroctopus_sp.,
-		89	Enteroctopus_sp._2,
-		90	Sasakiopus_salebrosus
+		14	Muusoctopus_eureka,
+		15	Muusoctopus_oregonensis,
+		16	Muusoctopus_yaquinae,
+		17	Muusoctopus_longibrachus_longibrachus,
+		18	Muusoctopus_rigbyae,
+		19	Muusoctopus_normani,
+		20	Muusoctopus_longibrachus_akambei,
+		21	Muusoctopus_johnsonianus,
+		22	Muusoctopus_sp._A,
+		23	Muusoctopus_cf._profundorum,
+		24	Muusoctopus_sp._B,
+		25	Octopus_californicus,
+		26	Enteroctopus_dofleini,
+		27	Enteroctopus_megalocyathus
 		;
    [Note: This tree contains information on the topology, 
           branch lengths (if present), and the probability
           of the partition indicated by the branch.]
-   tree con_all_compat = (1:1.145787e-02,8:1.557111e-02,((((2:1.760650e-01,((7:1.725554e-01,((((((11:6.588001e-03,13:1.735192e-02)0.515:2.903734e-03,(12:7.905875e-03,14:4.703093e-03)0.995:3.330941e-03)1.000:3.204180e-02,((70:1.064673e-03,71:9.269450e-04)0.858:2.729312e-03,72:3.084987e-03)1.000:7.028492e-02)0.961:1.544798e-02,(((((((15:5.262108e-04,16:6.306792e-04)0.515:1.238656e-03,(17:4.278072e-03,18:8.202068e-03)0.794:1.897319e-03)1.000:5.279867e-02,(((((((26:1.023663e-03,69:4.472701e-03)0.106:1.229301e-03,(63:1.065022e-03,68:1.009611e-03)0.068:1.158092e-03)0.011:1.055265e-03,(64:1.090352e-03,65:1.048128e-03)0.074:1.079897e-03)0.008:8.890017e-04,(62:1.057483e-03,67:1.048892e-03)0.074:1.170011e-03)0.058:1.163555e-03,61:1.032118e-03)0.719:2.977067e-03,66:1.387119e-03)0.968:6.180442e-03,(((38:4.884160e-04,39:5.839935e-04)0.224:4.975226e-04,40:1.090222e-03)0.336:1.269329e-03,54:1.985321e-03)0.539:2.640922e-03)1.000:2.932678e-02)0.996:1.419577e-02,((((19:2.213254e-03,20:2.147717e-03)0.814:7.837503e-03,(24:4.701686e-03,25:1.183058e-02)1.000:6.314753e-02)0.639:1.504060e-02,((((27:5.392020e-04,28:1.695778e-03)0.509:1.650746e-03,56:1.062680e-03)0.983:6.418693e-03,58:7.754977e-04)0.999:1.099497e-02,57:2.152245e-03)1.000:3.318336e-02)0.427:1.181043e-02,(21:1.751338e-02,((22:2.359634e-02,((29:1.135366e-03,((30:1.091354e-03,33:1.114285e-03)0.149:1.155200e-03,(31:1.123895e-03,32:1.156578e-03)0.150:1.138286e-03)0.137:1.183548e-03)0.974:2.731488e-02,((46:3.611013e-03,47:8.237996e-04)0.625:6.559289e-03,59:2.173858e-03)0.884:1.341814e-02)0.543:6.163758e-03)0.234:2.259307e-03,(55:1.414040e-02,60:2.571158e-02)0.575:1.332293e-02)0.448:5.728394e-03)0.428:5.797656e-03)0.234:4.137436e-03)0.195:3.094143e-03,(((48:6.170753e-03,49:6.858741e-04)1.000:3.024830e-02,(51:1.116760e-03,52:5.508019e-04)0.999:3.412185e-02)0.504:4.251125e-03,53:5.533391e-02)0.960:9.278903e-03)0.735:5.920607e-03,(23:5.066513e-02,((34:4.775220e-03,50:2.043690e-03)0.343:3.164082e-03,(35:5.438615e-04,(36:1.681762e-03,37:2.457448e-03)0.301:9.010550e-04)0.460:2.000318e-03)1.000:5.725365e-02)0.653:6.553852e-03)0.859:9.893710e-03,90:4.249811e-02)0.793:1.014435e-02)0.881:1.447881e-02,(((73:9.938362e-04,74:2.083076e-03)0.372:1.096283e-03,75:2.510302e-03)1.000:1.855497e-02,((((((76:6.205638e-04,((77:3.801402e-03,81:1.101818e-03)0.526:1.360451e-03,78:7.015652e-04)1.000:7.039931e-03)0.248:9.970819e-04,(79:2.657441e-03,82:1.097949e-03)0.138:1.097705e-03)0.078:1.199494e-03,80:1.267969e-03)0.246:2.204238e-03,((84:1.200215e-03,85:1.190163e-03)0.538:2.107052e-03,86:2.308698e-03)0.913:2.889909e-03)0.385:2.214446e-03,(83:1.146459e-03,87:1.192397e-03)0.460:1.981233e-03)0.960:1.645217e-02,(88:2.024282e-03,89:1.535372e-03)0.967:1.414951e-02)0.826:1.167271e-02)0.881:1.420887e-02)0.748:2.420223e-02,(((41:2.697031e-03,43:1.134192e-03)0.182:1.068450e-03,(42:1.131557e-03,45:1.132883e-03)0.179:1.127111e-03)0.600:3.563302e-03,44:6.259951e-03)0.997:4.528577e-02)1.000:1.905500e-01)0.907:4.716600e-02,(9:1.410035e-01,10:8.729085e-02)1.000:8.015891e-02)0.894:3.285876e-02)0.928:4.897505e-02,4:1.368725e-01)0.875:2.854683e-02,(5:7.993062e-02,6:1.264180e-01)1.000:1.088715e-01)1.000:3.580447e-02,3:8.977704e-02)1.000:7.318321e-02);
+   tree con_all_compat = (1:9.950682e-03,8:2.039203e-02,((((((2:3.240388e-01,(9:2.052646e-01,10:1.228625e-01)1.000:1.184804e-01)0.618:4.000514e-02,((((11:7.825278e-03,(12:1.310816e-02,13:1.869251e-02)0.462:3.799281e-03)1.000:4.566745e-02,25:9.885383e-02)0.929:1.961261e-02,((((14:6.863170e-02,(17:1.041561e-02,20:4.404759e-03)1.000:3.342840e-02)0.974:1.417007e-02,18:8.447615e-02)0.369:4.297639e-03,((15:2.735794e-02,((22:4.577509e-02,23:4.309373e-02)0.734:6.369352e-03,24:7.172126e-02)1.000:1.012064e-02)0.634:4.604258e-03,21:3.016283e-02)0.395:4.861880e-03)0.985:8.219032e-03,(16:6.723736e-02,19:8.623060e-02)0.688:8.695268e-03)0.995:2.047202e-02)0.945:2.488109e-02,(26:2.234979e-02,27:2.956151e-02)0.596:9.877795e-03)1.000:2.746799e-01)0.660:4.313020e-02,7:2.642550e-01)0.969:6.207111e-02,(5:1.192615e-01,6:1.755059e-01)1.000:1.985043e-01)0.923:4.964266e-02,4:2.112540e-01)1.000:5.747510e-02,3:1.108200e-01)1.000:1.094936e-01);
 
 end;

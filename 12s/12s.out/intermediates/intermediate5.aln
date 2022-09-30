@@ -1,25 +1,21 @@
-CLUSTAL W --- LocARNA 2.0.0RC8
+CLUSTAL W --- LocARNA 2.0.0RC8 --- Score: 71070
 
-                   ..........((.(((......-))).))..................----------(((((((...)))))))----.................((((((...))))))..........
-Octopus_rubescens  UUUUUUAGUGUAAAAGUGAAAU-UUUCUACUUAAGUAUUAUGAAGGG----------UGUUAAUUAUAUUAAUG----AUAUAAAAUUAUAUUUAAAACUUAAAAAGUUUGGCGGUCUUA
-Octopus_berrima    UUUGUUUUUGUAAAAAUUAAUUAUUUUUACCUAAGUAUUAUGAAUGUAAUUUAAAUAUAGUUUGUUUGGGAUUAUACAUAUUUAAUUUAUAUUUAAAACUUAAAAGGUUUGGCGGUUUUA
-Macroctopus_maorum UUUUUUUUUGUAAAAGUUGAUU-UUUUUACCUAAGUAUUAUGAAUGUAAUUAAAGAUGUUUUAUAUUAUAAAAUU---AUAUUGAUUUAUGUUUAAAACUUAAAAGGUUUGGCGGUUUUA
-                   ..........((.(((.......))).))............................(((((((...))))))).....................((((((...))))))..........
+                           ------......(((((-(((((((.(((.((((((((.(((.((.(((((---(((((......)))))..))))).))))).))))...))))))).))))))).............(
+Enteroctopus_megalocyathus ------UUUUGAUUUAU-AAAAUUGGUAAUACCUAAGUAUUAUGAAAAUAU---UAUUAUUGUAUUAAUAUUAUAUUAUUUAAAACUUAAAAGGUUUGGCGGUUUUACAUAUCCAGUUAG
+Enteroctopus_dofleini      CUAUUAUUUUGAUUUAUAAAAAUUGGUAAUACCUAAGUAUUAUGAAAAUAUUAUUAUUAUUAUAUUAAUAUUAUAUUAUUUAAAACUUAAAAGGUUUGGCGGUUUUACAUAUCCAGUUAG
+                           ............(((((.(((((((.(((.((((((((.(((.((.(((((...(((((......)))))..))))).))))).))))...))))))).))))))).............(
 
-                   .........((((((((..(((((((.....))))))))))....))).)).............(((((((((((................))))))))))).............((((.
-Octopus_rubescens  CAUAUCCAGUUAGGGGAGUUUGUUAAUUGAUUUGAUAAUCCACAUUUUAAACUUACUUUUUUUUGUAUAUAUAUAUAUAUAUAUAUGUAUGUAUGUAUGUAUCAGUUUAUAUAUUGCUGU
-Octopus_berrima    CAUAUCCAGUUAGGGGAGUUUGUUAAUUUGUUUGAUAAUCCUCAUUUUAAACUUACUUUUUUUUGAUAUAUAAAAUAUACA----------GUUUAUAUAUU-------------GCUGU
-Macroctopus_maorum CAUAUCCAGUUAGGGGAGUUUGUUAAUUUGUUUGAUAAUCCUCAUUUUAAACUUACUUUUUUUUGAUAUAUAAGUUAUACA----------GUUUAUAUAUU-------------GCUGU
-                   .........((((((((..(((((((.....))))))))))....))).)).............(((((((((((......----------)))))))))))-------------((((.
+                           ((((..(((((((.....)))))))))))).((...))...........((((((........)))(((((((...))))))).((((...((((((....((((((......)))))))
+Enteroctopus_megalocyathus GGGAGUUUGUUAAUUAAUUUGAUGAUCCUCGUUUUAAACUUACUUUUUUUUGAUAUAUUUAUAUAUAUAUACAGUUUGUAUAUUGCUGUCGUUAGUUUAUGUUUUGAGAAUUGUUAAAAG
+Enteroctopus_dofleini      GGGAGUUUGUUAAUUGAUUUGAUGAUCCUCGUUUUAAACUUACUUUUUUUUGAUAUAUU----UAUAUAUACAGUUUGUAUAUUGCUGUCGUUAGUUUAUGUUUUGAGAAUUAUUAAAAG
+                           ((((..(((((((.....)))))))))))).((...))...........((((((....----)))(((((((...))))))).((((...((((((....((((((......)))))))
 
-                   ...))))......(((((...)))))-......................(((((......)))))........((((((...((((((...(((((((....((((((.......))...
-Octopus_rubescens  CGUCAGUUUAUAUUUUGAGAGUUAAA-GGACUAUGUAAGAUUUUAUUUUUUAUGUCAAGUCAUAAUGUAGCUUAUAAAAAAGGUUUAAUGGACUACUAUAAUUAAUGUUAUUUAUAUAUC
-Octopus_berrima    CGUCAGUUUAUGUUUUGAGAAUUAAAAGAACUGUGAAAUUUUUAAGUUAUUAUGUCAAGUCAUAAUGUAGCUAAUAAGAAAGGUUUAAUGAACUACUGUAAAUAAUGUUUUUUA----UU
-Macroctopus_maorum CGUCAGUUUAUCUUUUGAGAA-AAAAAGAACUAUGAAAUUUUUAGAUUGUUAUGUCAAGUCAUAAUGUAGCUAAUGAAAAAGGUUUAAUGAACUACUAUAAAUAAUAUUUUUUA-AUGUC
-                   ...))))......(((((...))))).......................(((((......)))))........((((((...((((((...(((((((....((((((......-))...
+                           )))))......(((((((((.......))))))..)))))))))).((((.(((((((((((((...((((((((...)))))))).......(((((...((((((..(((((((..((
+Enteroctopus_megalocyathus ACUAGUAAAUGUAUUGAUUUUUAUGUUAAGUCAUAAUGCAGCUAAUAAGAAAGGUUUAAUGAGCUACUUUAAUGAAUUUUAUUGAAUAUCCGGAUAUUAGAAAUUAUAUUUUAUUAGAAA
+Enteroctopus_dofleini      ACUAGGAAAUGUAUUGAUUUUUAUGUUAAGUCAUAAUGCAGCUAAUAAAAAAGGUUUAAUGAACUACUUUAAUAAAUUUUGUUAAAUAUCCGGAUAUUAGAAAUUAUAUUUUAUUAGAAA
+                           )))))......(((((((((.......))))))..)))))))))).((((.(((((((((((((...((((((((...)))))))).......(((((...((((((..(((((((..((
 
-                   ....((((((((......))))))))..(((.....))).........))))....))))).))....))))))....))))))......
-Octopus_rubescens  CAGAUAGUAGAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAUAGUAAAAUUAUAAUUAGUAUGUAUUUUUGAAUAUGGUUUUGUAAGGUG
-Octopus_berrima    CGGAUAAUAAAAGUUAUAUUUUAUUAGAAAGAGGGACUUAAUAGUAAAUUUAUAAUUAGUAUGUGUAAUUGAAUAAGGUUUUGUAAAAUG
-Macroctopus_maorum CGGAUAAUAGAAAUUAAAUUUUGUUAAAAAGGUGGACUUAAUAGUAAAAUUAUAAUUAGUAUGUAAAUUUGAAUAAGGUUUUGUAAAAUG
-                   ....((((((((......))))))))..(((.....))).........))))....))))).))....))))))....))))))......
+                           (.....)))..)))))))..))))))))))))).)))))))))))..)))))))))...-
+Enteroctopus_megalocyathus GGUGGACUUAAUAGUAAAUAAUAAUUAGUGUGUAUUAUUGAAUUUGGUUUUGUAGAGUG-
+Enteroctopus_dofleini      GGUGGACUUAAUAGUAAAUAAUAAUUAGUGUGUAUUAUUGAAUUUGGUUUUGUAGAGUGU
+                           (.....)))..)))))))..))))))))))))).)))))))))))..)))))))))....

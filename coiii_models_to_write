@@ -1,4 +1,3 @@
-      lset applyto=(1) nst=2 rates=gamma;
-      lset applyto=(2) nst=2 rates=propinv;
-      lset applyto=(3) nst=2 rates=gamma;
-      prset applyto=(2) statefreqpr=fixed(equal);
+      lset applyto=(1) nst=6 rates=invgamma;
+      lset applyto=(2) nst=2 rates=invgamma;
+      lset applyto=(3) nst=6 rates=invgamma;

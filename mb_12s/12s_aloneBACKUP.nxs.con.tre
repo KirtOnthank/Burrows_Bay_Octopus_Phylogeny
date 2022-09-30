@@ -1,0 +1,72 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=27;
+	taxlabels
+		Octopus_vulgaris
+		Octopus_rubescens
+		Octopus_bimaculoides
+		Octopus_cyanea
+		Amphioctopus_aegina
+		Hapalochlaena_maculosa
+		Abdopus_aculeatus
+		Octopus_tetricus
+		Octopus_berrima
+		Macroctopus_maorum
+		Muusoctopus_leioderma_casiz31213
+		Burrows_Bay_octopus
+		Muusoctopus_leioderma_neotype
+		Muusoctopus_eureka
+		Muusoctopus_oregonensis
+		Muusoctopus_yaquinae
+		Muusoctopus_longibrachus_longibrachus
+		Muusoctopus_rigbyae
+		Muusoctopus_normani
+		Muusoctopus_longibrachus_akambei
+		Muusoctopus_johnsonianus
+		Muusoctopus_sp._A
+		Muusoctopus_cf._profundorum
+		Muusoctopus_sp._B
+		Octopus_californicus
+		Enteroctopus_dofleini
+		Enteroctopus_megalocyathus
+		;
+end;
+begin trees;
+	translate
+		1	Octopus_vulgaris,
+		2	Octopus_rubescens,
+		3	Octopus_bimaculoides,
+		4	Octopus_cyanea,
+		5	Amphioctopus_aegina,
+		6	Hapalochlaena_maculosa,
+		7	Abdopus_aculeatus,
+		8	Octopus_tetricus,
+		9	Octopus_berrima,
+		10	Macroctopus_maorum,
+		11	Muusoctopus_leioderma_casiz31213,
+		12	Burrows_Bay_octopus,
+		13	Muusoctopus_leioderma_neotype,
+		14	Muusoctopus_eureka,
+		15	Muusoctopus_oregonensis,
+		16	Muusoctopus_yaquinae,
+		17	Muusoctopus_longibrachus_longibrachus,
+		18	Muusoctopus_rigbyae,
+		19	Muusoctopus_normani,
+		20	Muusoctopus_longibrachus_akambei,
+		21	Muusoctopus_johnsonianus,
+		22	Muusoctopus_sp._A,
+		23	Muusoctopus_cf._profundorum,
+		24	Muusoctopus_sp._B,
+		25	Octopus_californicus,
+		26	Enteroctopus_dofleini,
+		27	Enteroctopus_megalocyathus
+		;
+   [Note: This tree contains information on the topology, 
+          branch lengths (if present), and the probability
+          of the partition indicated by the branch.]
+   tree con_50_majrule = (1:1.164732e-02,8:1.300293e-02,(((((2:2.166700e-01,(7:1.583430e-01,(9:1.149687e-01,10:4.483172e-02)0.536:3.875688e-02)0.896:6.701073e-02)0.562:4.700333e-02,(((11:5.659707e-03,12:1.770645e-02,13:2.171131e-02)0.859:1.499204e-02,14:1.955787e-02,15:4.232870e-03,16:3.338180e-02,(17:1.012517e-02,20:4.257643e-03)1.000:1.918432e-02,(18:8.081020e-03,25:4.860207e-02)0.575:8.674022e-03,19:4.134262e-02,21:3.994973e-03,22:1.541478e-02,23:1.391752e-02,24:1.681067e-02)0.971:2.605820e-02,26:6.510431e-03,27:2.111083e-02)1.000:1.999141e-01)0.973:9.857907e-02,(5:2.951973e-02,6:1.102172e-01)1.000:1.799490e-01)0.970:1.002541e-01,4:1.379743e-01)0.688:3.113547e-02,3:7.922216e-02)0.994:4.022355e-02);
+
+   [Note: This tree contains information only on the topology
+          and branch lengths (median of the posterior probability density).]
+   tree con_50_majrule = (1:1.164732e-02,8:1.300293e-02,(((((2:2.166700e-01,(7:1.583430e-01,(9:1.149687e-01,10:4.483172e-02):3.875688e-02):6.701073e-02):4.700333e-02,(((11:5.659707e-03,12:1.770645e-02,13:2.171131e-02):1.499204e-02,14:1.955787e-02,15:4.232870e-03,16:3.338180e-02,(17:1.012517e-02,20:4.257643e-03):1.918432e-02,(18:8.081020e-03,25:4.860207e-02):8.674022e-03,19:4.134262e-02,21:3.994973e-03,22:1.541478e-02,23:1.391752e-02,24:1.681067e-02):2.605820e-02,26:6.510431e-03,27:2.111083e-02):1.999141e-01):9.857907e-02,(5:2.951973e-02,6:1.102172e-01):1.799490e-01):1.002541e-01,4:1.379743e-01):3.113547e-02,3:7.922216e-02):4.022355e-02);
+end;

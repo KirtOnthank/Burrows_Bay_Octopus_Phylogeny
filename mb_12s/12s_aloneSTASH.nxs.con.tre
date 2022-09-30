@@ -1,0 +1,70 @@
+#NEXUS
+[ID: 1927567342]
+begin taxa;
+	dimensions ntax=27;
+	taxlabels
+		Octopus_vulgaris
+		Octopus_rubescens
+		Octopus_bimaculoides
+		Octopus_cyanea
+		Amphioctopus_aegina
+		Hapalochlaena_maculosa
+		Abdopus_aculeatus
+		Octopus_tetricus
+		Octopus_berrima
+		Macroctopus_maorum
+		Muusoctopus_leioderma_casiz31213
+		Burrows_Bay_octopus
+		Muusoctopus_leioderma_neotype
+		Muusoctopus_eureka
+		Muusoctopus_oregonensis
+		Muusoctopus_yaquinae
+		Muusoctopus_longibrachus_longibrachus
+		Muusoctopus_rigbyae
+		Muusoctopus_normani
+		Muusoctopus_longibrachus_akambei
+		Muusoctopus_johnsonianus
+		Muusoctopus_sp._A
+		Muusoctopus_cf._profundorum
+		Muusoctopus_sp._B
+		Octopus_californicus
+		Enteroctopus_dofleini
+		Enteroctopus_megalocyathus
+		;
+end;
+begin trees;
+	translate
+		1	Octopus_vulgaris,
+		2	Octopus_rubescens,
+		3	Octopus_bimaculoides,
+		4	Octopus_cyanea,
+		5	Amphioctopus_aegina,
+		6	Hapalochlaena_maculosa,
+		7	Abdopus_aculeatus,
+		8	Octopus_tetricus,
+		9	Octopus_berrima,
+		10	Macroctopus_maorum,
+		11	Muusoctopus_leioderma_casiz31213,
+		12	Burrows_Bay_octopus,
+		13	Muusoctopus_leioderma_neotype,
+		14	Muusoctopus_eureka,
+		15	Muusoctopus_oregonensis,
+		16	Muusoctopus_yaquinae,
+		17	Muusoctopus_longibrachus_longibrachus,
+		18	Muusoctopus_rigbyae,
+		19	Muusoctopus_normani,
+		20	Muusoctopus_longibrachus_akambei,
+		21	Muusoctopus_johnsonianus,
+		22	Muusoctopus_sp._A,
+		23	Muusoctopus_cf._profundorum,
+		24	Muusoctopus_sp._B,
+		25	Octopus_californicus,
+		26	Enteroctopus_dofleini,
+		27	Enteroctopus_megalocyathus
+		;
+   [Note: This tree contains information on the topology, 
+          branch lengths (if present), and the probability
+          of the partition indicated by the branch.]
+   tree con_all_compat = (1:1.170966e-02,8:1.298804e-02,(((((2:2.160719e-01,(7:1.575147e-01,(9:1.159107e-01,10:4.476090e-02)0.545:3.886396e-02)0.890:6.700675e-02)0.558:4.655996e-02,((((((((11:5.767451e-03,(12:1.767614e-02,13:2.203289e-02)0.378:5.434157e-03)0.862:1.502175e-02,24:1.689907e-02)0.281:4.703875e-03,14:1.966735e-02)0.154:3.663277e-03,22:1.537002e-02)0.144:3.893309e-03,((16:3.359951e-02,(17:1.011570e-02,20:4.331736e-03)1.000:1.903929e-02)0.266:4.897259e-03,23:1.397154e-02)0.339:6.429858e-03)0.057:3.763268e-03,(19:4.127366e-02,21:4.062472e-03)0.210:4.290334e-03)0.029:2.298427e-03,(15:4.241336e-03,(18:8.050481e-03,25:4.839541e-02)0.572:9.056457e-03)0.069:2.099739e-03)0.971:2.630162e-02,(26:6.540593e-03,27:2.115354e-02)0.403:6.851105e-03)1.000:2.005844e-01)0.976:1.004135e-01,(5:2.916100e-02,6:1.109476e-01)1.000:1.806146e-01)0.969:9.910112e-02,4:1.386481e-01)0.681:3.123741e-02,3:7.987933e-02)0.994:4.031503e-02);
+
+end;

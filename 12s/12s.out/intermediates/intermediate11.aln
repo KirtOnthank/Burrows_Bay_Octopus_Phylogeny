@@ -1,25 +1,21 @@
-CLUSTAL W --- LocARNA 2.0.0RC8
+CLUSTAL W --- LocARNA 2.0.0RC8 --- Score: 79655
 
-                      ((((((((.((((((..((.((((((..(((((.(((....))).))))).)))))).)))))))).))))))))(((...))).......((.......))...(((((((.(((((((
-Muusoctopus_normani   UUUUGAAUUGUAAAAAUUAAUAAUACCUAAGUAUUAUGAAAAUAUUAUUUUGUGUUAAUAUUUUAUUAUUUAAAACUUAAAAGGUUUGGCGGUUUUACAUAUCCAGUUAGGGGAGUUUGU
-Muusoctopus_normani_2 UUUUGAAUUGUAAAAAUUAAUAAUACCUAAGUAUUAUGAAAAUAUUAUUUUGUGUUAAUAUUUUAUUAUUUAAAACUUAAAAGGUUUGGCGGUUUUACAUAUCCAGUUAGGGGAGUUUGU
-Muusoctopus_normani_3 UUUUGAAUUGUAAAAAUUAAUAAUACCUAAGUAUUAUGAAAAUAUUAUUUUGUGUUAAUAUUUUAUUAUUUAAAACUUAAAAGGUUUGGCGGUUUUACAUAUCCAGUUAGGGGAGUUUGU
-                      ((((((((.((((((..((.((((((..(((((.(((....))).))))).)))))).)))))))).))))))))(((...))).......((.......))...(((((((.(((((((
+                            ..(((((..((.(((((((.(((.((((((((.((((((((((((((..........)))))))))..))..))).))))...))))))).)))))))..))))).))...(((((..((
+Muusoctopus_cf._profundorum UUUUGAUUUAUAAAAAUUGGUAAUACCUAAGUAUUAUGAAAAUAUUAUUUUUUGAAUUAAUAUUUUGUUAUUUAAAACUUAAAAGGUUUGGCGGUUUUACAUAUCCAGUUAGGGGAGUUU
+Muusoctopus_sp._B           UUUUGAUUUAUAAAAAUUGGUAAUACCUAAGUAUUAUGAAAAUGUUAUUUUGU--AUUAAUAUUUUGUUAUUUAAAACUUAAAAGGUUUGGCGGUUUUACAUAUCCAGUUAGGGGAGUUU
+                            ..(((((..((.(((((((.(((.((((((((.((((((((((((((......--..)))))))))..))..))).))))...))))))).)))))))..))))).))...(((((..((
 
-                      (((.....)))((((...))))..((((....((.((((((((((........((((((...))))))..(((((.(((((((((((((((((......))))..)))......))))))
-Muusoctopus_normani   UAAUUGAUUUGAUGAUCCUCGUUUUAAACUUACUUUUUUUUGUUAUAUUUAUUUAUACAGUUUGUAUAUUGCUGUCGUUAGUUUAUGUUUUGAGAAUUAUUAAAAGACUAGAAAAUGAAU
-Muusoctopus_normani_2 UAAUUGAUUUGAUGAUCCUCGUUUUAAACUUACUUUUUUUUGUUAUAUUUAUUUAUACAGUUUGUAUAUUGCUGUCGUUAGUUUAUGUUUUGAGAAUUAUUAAAAGACUAGAAAAUGAAU
-Muusoctopus_normani_3 UAAUUGAUUUGAUGAUCCUCGUUUUAAACUUACUUUUUUUUGUUAUAUUUAUUUAUACAGUUUGUAUAUUGCUGUCGUUAGUUUAUGUUUUGAGAAUUAUUAAAAGACUAGAAAAUGAAU
-                      (((.....)))((((...))))..((((....((.((((((((((........((((((...))))))..(((((.(((((((((((((((((......))))..)))......))))))
+                            (((((.....))))))))))))((((((((((.....((((((((((........((((((...))))))..((((...((((((....((((((......))))))))))))......(
+Muusoctopus_cf._profundorum GUUAAUUGAUUUGAUGAUCCUCGUUUUAAACUUACUUUUUUUUGUUAUAUGUAUAUAUACAGUUUGUGUAUUGCUGUCGUUAGUUUAUGUUUUGAGAAUUGUUAAAAGACUAGAAAAUGU
+Muusoctopus_sp._B           GUUAAUUGAUUUGAUGAUCCUCGUUUUAAACUUACUUUUUUUUGUUAUAUUUAUUUAUACAGUUUGUGUAUUGCUGUCGUUAGUUUAUGUUUUAAGAAUCAUUAAAAGACUAGAAAAUGU
+                            (((((.....))))))))))))((((((((((.....((((((((((........((((((...))))))..((((...((((((....((((((......))))))))))))......(
 
-                      (((((((.....))))))))))))))))))))))))))))))))))))))).)))))))..(((((((.(((.(((((((((....((((((..(((((((..(((.....)))..))))
-Muusoctopus_normani   UGAUUUAUAUGUUAAGUCAUAAUGCAGCUAAUAAAAAAGGUUUAAUGAGCUACUUUAAUAAAUUUUAUUGAAUACCAGAUUUUAAAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAUAGU
-Muusoctopus_normani_2 UGAUUUAUAUGUUAAGUCAUAAUGCAGCUAAUAAAAAAGGUUUAAUGAGCUACUUUAAUAAAUUUUAUUGAAUACCAGAUUUUAAAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAUAGU
-Muusoctopus_normani_3 UGAUUUAUAUGUUAAGUCAUAAUGCAGCUAAUAAAAAAGGUUUAAUGAGCUACUUUAAUAAAUUUUAUUGAAUACCAGAUUUUAAAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAUAGU
-                      (((((((.....))))))))))))))))))))))))))))))))))))))).)))))))..(((((((.(((.(((((((((....((((((..(((((((..(((.....)))..))))
+                            (.(((((((.....)))))))...))))))))))))))))))))))..))))(((((((..(((((..(((((((((.((.(((.....((((((..(((((((..(((.....)))..)
+Muusoctopus_cf._profundorum AUUGAUUUAUAUGUUAAGUCAUAAUGCAGCUAAUAAAAAAGGUUUAAUGAACUACUUUAAUAAAUUUUAUUUAGUAUCCGGAUUUUAGAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAU
+Muusoctopus_sp._B           GAUGAUUUAUAUGUUAAGUCAUAAUGCAGCUAAUAAAAAAGGUUUAAUGAACUACUUUAAUAAAUUUUAUUUAAUAUCCGGAUUUUAGAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAU
+                            (.(((((((.....)))))))...))))))))))))))))))))))..))))(((((((..(((((..(((((((((.((.(((.....((((((..(((((((..(((.....)))..)
 
-                      )))..))))))((((.....))))))))))))))))))))))).
-Muusoctopus_normani   AAAUAAUAAUUAGUAUGUAUUAUUGAAUUUGGUUUUGUAGAGUG
-Muusoctopus_normani_2 AAAUAAUAAUUAGUAUGUAUUAUUGAAUUUGGUUUUGUAGAGUG
-Muusoctopus_normani_3 AAAUAAUAAUUAGUAUGUAUUAUUGAAUUUGGUUUUGUAGAGUG
-                      )))..))))))((((.....))))))))))))))))))))))).
+                            ))))))..))))))))).)).)).)))))))..)))))..)))))))
+Muusoctopus_cf._profundorum AGUAAAUAAUAAUUAGUGUGUAUUAUUGAAUUUGGUUUUGUAGAGUG
+Muusoctopus_sp._B           AGUAAAUAAUAAUUAGUGUGUAUUAUUGAAUUUGGUUUUGUAGAGUG
+                            ))))))..))))))))).)).)).)))))))..)))))..)))))))

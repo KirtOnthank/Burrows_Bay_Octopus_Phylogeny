@@ -1,21 +1,21 @@
-CLUSTAL W --- LocARNA 2.0.0RC8 --- Score: 57978
+CLUSTAL W --- LocARNA 2.0.0RC8 --- Score: 64810
 
-                   .......................((((((......)).))))-(((((....(((((((((((((((.....)))))))))((((((((.....(((((...))))))))))))))).))
-Octopus_tetricus   AGAGACCCUAUUWUUUYUUAUUGUAAAAAUUAAUUUUGUUUA-CCUAAGUAUUAUGAAAAUGAUUAAGAUAGUUAGUUAUUGAUUGUUAUUUAAAACUUAAAAGGUUUGGCGGUUUUACA
-Octopus_vulgaris   -------CUAUUAUUUCUUAUUGUAAAAAUUGAUUUUGUUUACCCUAAGUAUUAUGAAAAUGACUAAGAUAGUUAGUUAUUGAUUGUUGUUUAAAACUUAAAAGGUUUGGCGGUUUUACA
-                   -------................((((((......)).)))).(((((....(((((((((((((((.....)))))))))((((((((.....(((((...))))))))))))))).))
+                   .....(((((((((((.......))))))).(((((.((.(((((((((...((.((((((((.....))))))....)).))...))))))))))))))))((((.((((.(((...((
+Octopus_berrima    UUUGUUUUUGUAAAAAUUAAUUAUUUUUACCUAAGUAUUAUGAAUGUAAUUUAAAUAUAGUUUGUUUGGGAUUAUACAUAUUUAAUUUAUAUUUAAAACUUAAAAGGUUUGGCGGUUUUA
+Macroctopus_maorum UUUUUUUUUGUAAAAGUUGAUU-UUUUUACCUAAGUAUUAUGAAUGUAAUUAAAGAUGUUUUAUAUUAUAAAAUU---AUAUUGAUUUAUGUUUAAAACUUAAAAGGUUUGGCGGUUUUA
+                   .....(((((((((((......-))))))).(((((.((.(((((((((...((.((((((((.....)))))).---)).))...))))))))))))))))((((.((((.(((...((
 
-                   )).....))))).((..(((((((......)))))))))..................................--------------.((((....))))(((..((((....)))).))
-Octopus_tetricus   UAUCCAGUUAGGGGAGUUUGUUAAUAUAAUUUGAUAAUCCMCAUUUUAAACUUACUUUUUUUUGNNNNAAUUA--------------UAUAACGGUUUAUAUAUUGCUGUCGACAGUUUA
-Octopus_vulgaris   UAUCCAGUUAGGGGAGUUUGUUAAUAUAAUUUGAUAAUCCACAUUUUAAACUUACUUUUUUUUGAAUUAUAUAUAUAUAUAUAUAUGUAUAACGGUUUAUAUAUUGCUGUCGGCAGUUUA
-                   )).....))))).((..(((((((......))))))))).................................................((((....))))(((..((((....)))).))
+                   (((((..((((((((((..(((((((.....))))))))))))...((((((((...(((((.(((((((((((........)))))))))))...(((..(((((...((((.......
+Octopus_berrima    CAUAUCCAGUUAGGGGAGUUUGUUAAUUUGUUUGAUAAUCCUCAUUUUAAACUUACUUUUUUUUGAUAUAUAAAAUAUACAGUUUAUAUAUUGCUGUCGUCAGUUUAUGUUUUGAGAAUU
+Macroctopus_maorum CAUAUCCAGUUAGGGGAGUUUGUUAAUUUGUUUGAUAAUCCUCAUUUUAAACUUACUUUUUUUUGAUAUAUAAGUUAUACAGUUUAUAUAUUGCUGUCGUCAGUUUAUCUUUUGAGAA-A
+                   (((((..((((((((((..(((((((.....))))))))))))...((((((((...(((((.(((((((((((........)))))))))))...(((..(((((...((((.....-.
 
-                   )(((((((((..........))))))).......)).....(((((((((........((((((((((..(((((...)))))....((((((..........................)
-Octopus_tetricus   UAUUUUAAGAGUAAAAGGACUUUUGAAUUUUAGGAUUUAUAUGUCAAGUCAUAAUGUAGCUGAUAAAGAAGGUUUAAUGGACUACUAUAAUUUAUAUUAUUUAUUUAUCYGGDDAAKGAA
-Octopus_vulgaris   UAUUUUAAGAAUAAAAGGACUUUUGAAUUUUAGGAUUUAUAUGUCAAGUCAUAAUGUAGCUGAUAAAGAAGGUUUAAUGGACUACUAUAAUUUAUAUUAUUUACUUAUCCGGAUAAUGAA
-                   )(((((((((..........))))))).......)).....(((((((((........((((((((((..(((((...)))))....((((((..........................)
+                   ))))))))).))).....(((..((((((((......))))))..)).))).))))))))))))).((..((((((....((.........---.((...((((((((......))))))
+Octopus_berrima    AAAAGAACUGUGAAAUUUUUAAGUUAUUAUGUCAAGUCAUAAUGUAGCUAAUAAGAAAGGUUUAAUGAACUACUGUAAAUAAUGUUUUUUA---UUCGGAUAAUAAAAGUUAUAUUUUAU
+Macroctopus_maorum AAAAGAACUAUGAAAUUUUUAGAUUGUUAUGUCAAGUCAUAAUGUAGCUAAUGAAAAAGGUUUAAUGAACUACUAUAAAUAAUAUUUUUUAAUGUCCGGAUAAUAGAAAUUAAAUUUUGU
+                   ))))))))).))).....(((..((((((((......))))))..)).))).))))))))))))).((..((((((....((.............((...((((((((......))))))
 
-                   )))))..))))))))))......))))))))).------------------------------------------------
-Octopus_tetricus   AAUUAAAUUUUGUUAGUAAGGDGGACUUGAUAG------------------------------------------------
-Octopus_vulgaris   AAUUAAAUUUUGUUAGUAAGGUGGACUUGAUAGUAAACUUGAUUAUUAGUAUGUGUAGUUGAAUGUGGUUUUGUAAAGUGU
-                   )))))..))))))))))......))))))))).................................................
+                   ))....)).....)).))))))...)).))))).)))))))...)))..)))).))))..))))..
+Octopus_berrima    UAGAAAGAGGGACUUAAUAGUAAAUUUAUAAUUAGUAUGUGUAAUUGAAUAAGGUUUUGUAAAAUG
+Macroctopus_maorum UAAAAAGGUGGACUUAAUAGUAAAAUUAUAAUUAGUAUGUAAAUUUGAAUAAGGUUUUGUAAAAUG
+                   ))....)).....)).))))))...)).))))).)))))))...)))..)))).))))..))))..

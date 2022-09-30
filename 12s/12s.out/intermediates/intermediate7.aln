@@ -1,33 +1,21 @@
-CLUSTAL W --- LocARNA 2.0.0RC8
+CLUSTAL W --- LocARNA 2.0.0RC8 --- Score: 80135
 
-                       -----......((..((((.((.....---)).))))........))..................(((((((...))))))).....................((((((...))))))..
-Octopus_rubescens      -----UUUUUUAGUGUAAAAGUGAAAU----UUUCUACUUAAGUAUUAUGAAGGG----------UGUUAAUUAUAUUAAUG----AUAUAAAAUUAUAUUUAAAACUUAAAAAGUUUGG
-Octopus_berrima        -----UUUGUUUUUGUAAAAAUUAAUU---AUUUUUACCUAAGUAUUAUGAAUGUAAUUUAAAUAUAGUUUGUUUGGGAUUAUACAUAUUUAAUUUAUAUUUAAAACUUAAAAGGUUUGG
-Macroctopus_maorum     -----UUUUUUUUUGUAAAAGUUGAUU----UUUUUACCUAAGUAUUAUGAAUGUAAUUAAAGAUGUUUUAUAUUAUAAAAUU---AUAUUGAUUUAUGUUUAAAACUUAAAAGGUUUGG
-Amphioctopus_aegina    CUAUAUUUUAAAGUGUAAAAAUUGAUUU---UAUUUACCUAAGUAUUAUGAA-------------GAUAAAUAUUGUUUAUU------AUCAAUUUUUAUUUAAAACUUAAAAAGUUUGG
-Hapalochlaena_maculosa -----UUUUAUAAUGUAAAAAUUGAGAUAAAUAUUUACCUAAGUAUUAUGAA-------------U-----------------------UUUUUAUUUAUUUAAAACUUAAAAAGUUUGG
-                       ...........((..((((.((........)).))))........)).....-------------(((((((...)))))))------...............((((((...))))))..
+                         ...((.(((((((((....(((((((....))))))).(((((((((........)))))))))((((.....(((((...)))))(((((((..((((((...((((((((((..((((
+Muusoctopus_oregonensis  UUUUGAUUUAUAAAAAUUGGUAAUACCUAAGUAUUAUGAAAAUAUUAUUUUGUAUUAAUAUUUUGUUGUUUAAAACUUAAAAGGUUUGGCGGUUUUACAUAUCCAGUUAGGGGAGUUUGU
+Muusoctopus_johnsonianus UUUUGAUUUAUAAAAAUUGGUAAUACCUAAGUAUUAUGAAAAUAUUAUUUUGUAUUAAUAUUUUGUUAUUUAAAACUUAAAAGGUUUGGCGGUUUUACAUAUCCAGUUAGGGGAGUUUGU
+                         ...((.(((((((((....(((((((....))))))).(((((((((........)))))))))((((.....(((((...)))))(((((((..((((((...((((((((((..((((
 
-                       ..((((((.((((.........(((...((((((.-....)))))).))).....(((((((....((((((.....((((((...((((......)))).))))))...........((
-Octopus_rubescens      CGGUCUUACAUAUCCAGUUAGGGGAGUUUGUUAAU-UGAUUUGAUAAUCCACAUUUUAAACUUACUUUUUUUUGUAUAUAUAUAUAUAUAUAUAUGUAUGUAUGUAUGUAUCAGUUUAUA
-Octopus_berrima        CGGUUUUACAUAUCCAGUUAGGGGAGUUUGUUAAU-UUGUUUGAUAAUCCUCAUUUUAAACUUACUUUUUUUUGAUAUAUAAAAUAUACA----------GUUUAUAUAUU---------
-Macroctopus_maorum     CGGUUUUACAUAUCCAGUUAGGGGAGUUUGUUAAU-UUGUUUGAUAAUCCUCAUUUUAAACUUACUUUUUUUUGAUAUAUAAGUUAUACA----------GUUUAUAUAUU---------
-Amphioctopus_aegina    CGGUUUUACAUAUCCAGUUAGGGGAGUCUGUUAAUAUAAUUUGAUAAUCCACAUUUUAAACUAAUUUUUUUUUGAUAUUAUAA---UUAUUUUUAUAUAAUUUAUAACAGU----UUAUA
-Hapalochlaena_maculosa CGGUUUUACAUAUCCAUUUAGGGGAGUCUGUUAAUAUAAUUUGAUAAUCCGCAUUUUAAACUAAUUUUUUUUUGAUAUUAUAA---UUAUGU---UAUAGU-UAUAACAGU----UUAUA
-                       ..((((((.((((.........(((...((((((......)))))).))).....(((((((....((((((.....((((((---((((......)))).))))))....----...((
+                         (((.....)))))))))))...))..)))).........((((.((((....))))))))..))))))..)))))))((((((....((((((......))))))))))))....(((((
+Muusoctopus_oregonensis  UAAUUGAUUUGAUGAUCCUCGUUUUAAACUUACUUUUUUUUGUUAUAUUUAUAUAUACAGUUUGUGUAUUGCUGUCGUUAGUUUAUGUUUUGAGAAUUAUUAAAAGACUAGAAAAUGUAU
+Muusoctopus_johnsonianus UAAUUGAUUUGAUGAUCCUCGUUUUAAACUUACUUUUUUUUGUUAUAUUUAUAUAUACAGUUUGUGUAUUGCUGUCGUUAGUUUAUGUUUUGAGAAUUAUUAAAAGACUAGAAAAUGUAU
+                         (((.....)))))))))))...))..)))).........((((.((((....))))))))..))))))..)))))))((((((....((((((......))))))))))))....(((((
 
-                       (...((((....))))..)))(((((.....)))))....................(((((((......)))))))........))))))))))))).......................
-Octopus_rubescens      UAUUGCUGUCGUCAGUUUAUAUUUUGAGAGUUAAA-GGACUAUGUAAGAUUUUAUUUUUUAUGUCAAGUCAUAAUGUAGCUUAUAAAAAAGGUUUAAUGGACUACUAUAAUUAAUGUUAU
-Octopus_berrima        ----GCUGUCGUCAGUUUAUGUUUUGAGAAUUAAAAGAACUGUGAAAUUUUUAAGUUAUUAUGUCAAGUCAUAAUGUAGCUAAUAAGAAAGGUUUAAUGAACUACUGUAAAUAAUGUUUU
-Macroctopus_maorum     ----GCUGUCGUCAGUUUAUCUUUUGAGAA-AAAAAGAACUAUGAAAUUUUUAGAUUGUUAUGUCAAGUCAUAAUGUAGCUAAUGAAAAAGGUUUAAUGAACUACUAUAAAUAAUAUUUU
-Amphioctopus_aegina    UAUUGCUGUCGUCAGUUUAUAUUUUAAGAAUUAAAGAACUAGUGAAUAUUUUAUAUUGUUAUGUCAAGUCAUAAUGUAGCUGAUGAAAAAGGUUUAAUGGACUACUUUAAUUGAUUUUAU
-Hapalochlaena_maculosa UAUUGCUGUCGUUAGUUUAUGUUUUGAGGUUAAAAGAACUAUUAAAUAUUACAUGUUGUUAUGUCAAGUCAUAAUGUAGCUAAUAAAAAAGGUUUGAUGGACUACUUUAAUUAAUUUCAU
-                       (...((((....))))..)))(((((.....)))))....................(((((((......)))))))........))))))))))))).......................
+                         (((((((.....)))))))..)))))..))))......(((((...)))))..((((((((...))))))))...((((((((.((.((((((..(((((((..(((.....)))..)))
+Muusoctopus_oregonensis  UGAUUUAUAUGUUAAGUCAUAAUGCAGCUAAUAAAAAAGGUUUAAUGAACUACUUUAAUAAAUUUUAUUAAAUAUCCGGAUUUUAGAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAUAG
+Muusoctopus_johnsonianus UGAUUUAUAUGUUAAGUCAUAAUGCAGCUAAUAAAAAAGGUUUAAUGAACUACUUUAAUAAAUUUUAUUAAAUAUCCGGAUUUUAAAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAUAG
+                         (((((((.....)))))))..)))))..))))......(((((...)))))..((((((((...))))))))...((((((((.((.((((((..(((((((..(((.....)))..)))
 
-                       .((..........((((((((......))))))))..(((.....)))..))...............)))).))..........-..........)))).-
-Octopus_rubescens      UUAUAUAUCCAGAUAGUAGAAAUUAUAUUUUAUUAGAAAGGUGGACUUAAUAGUAAAAUUAUAAUUAGUAUGUAUUUUUGAAUA-UGGUUUUGUAAGGUG-
-Octopus_berrima        UUA----UUCGGAUAAUAAAAGUUAUAUUUUAUUAGAAAGAGGGACUUAAUAGUAAAUUUAUAAUUAGUAUGUGUAAUUGAAUA-AGGUUUUGUAAAAUG-
-Macroctopus_maorum     UUA-AUGUCCGGAUAAUAGAAAUUAAAUUUUGUUAAAAAGGUGGACUUAAUAGUAAAAUUAUAAUUAGUAUGUAAAUUUGAAUA-AGGUUUUGUAAAAUG-
-Amphioctopus_aegina    UUGUUAAUCCGGAUAAUGAAGAUUAUAUUUUAUUAGUAAGGUGGACUUAAUAGUAAAUUAAUGAUUAGUAUGCAUUGUUGAAUAUUGGUUUUGUAAAAUGU
-Hapalochlaena_maculosa UUAUUA--CCAGAUAAUAAAAAUUAUAUUUUGUUAGUAAGGUGGACUUAAUAGUAAAUUAAUAAUUAGUAUGUAUUGUUGAAUGUAGGUUUUGUAAGAUG-
-                       .((..........((((((((......))))))))..(((.....)))..))...............)))).)).....................))))..
+                         ))))..))))))..((.....))))))))))))))))))))).))
+Muusoctopus_oregonensis  UAAAUAAUAAUUAGUGUGUAUUAUUGAAUUUGGUUUUGUAGAGUG
+Muusoctopus_johnsonianus UAAAUAAUAAUUAGUGUGUAUUAUUGAAUUUGGUUUUGUAGAGUG
+                         ))))..))))))..((.....))))))))))))))))))))).))
