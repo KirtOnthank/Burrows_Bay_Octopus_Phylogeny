@@ -13,7 +13,8 @@ output:
     toc_depth: 3
 ---
 
-# Loading Libraries
+# Session initialization
+## Loading Libraries
 ```{r Libraries, message=FALSE, warning=FALSE}
 library(ape)
 library(xlsx)
@@ -30,7 +31,7 @@ library(knitr)
 library(colorRamps)
 ```
 
-
+## Creating custom fuction
 This function to convert DNAbin objects used by the ape package to DNAStringSet objects used by the DECIPHER package was written by Joel Nitta, available on his github (https://gist.github.com/joelnitta/6f30a7c0f1c83d78c76a5469e935d56f)
 ```{r}
 # Convert ape::DNAbin format to Biostrings::DNAStringSet format,
@@ -47,6 +48,13 @@ DNAbin_to_DNAstringset <- function (seqs, remove_gaps = TRUE) {
       unlist %>% Biostrings::DNAStringSet()
   }
 }
+```
+
+
+## Session Info
+Here is the session information for this knitting:
+```{r}
+print(sessionInfo())
 ```
 
 

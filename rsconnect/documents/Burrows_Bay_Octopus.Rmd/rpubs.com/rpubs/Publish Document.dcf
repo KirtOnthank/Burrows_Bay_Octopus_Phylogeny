@@ -1,0 +1,11 @@
+name: Publish Document
+title:
+username:
+account: rpubs
+server: rpubs.com
+hostUrl: rpubs.com
+appId: https://api.rpubs.com/api/v1/document/972785/01fb6432b1464197a518c4b33696e635
+bundleId: https://api.rpubs.com/api/v1/document/972785/01fb6432b1464197a518c4b33696e635
+url: http://rpubs.com/konthank/972785
+when: 1669072642.90226
+lastSyncTime: 1669072642.90227

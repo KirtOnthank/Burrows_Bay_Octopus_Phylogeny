@@ -1,5 +1,5 @@
 #NEXUS
-[Data written by write.nexus.data.R, Thu Sep 29 22:30:56 2022]
+[Data written by write.nexus.data.R, Mon Nov 21 15:16:10 2022]
 BEGIN DATA;
   DIMENSIONS NTAX=27 NCHAR=628;
   FORMAT DATATYPE=DNA MISSING=? GAP=- INTERLEAVE=YES;
